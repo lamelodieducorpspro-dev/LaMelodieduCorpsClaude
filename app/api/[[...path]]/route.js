@@ -14,6 +14,34 @@ async function connectToMongo() {
   return db;
 }
 
+// ---------- Rate limiter ----------
+// Allows max LIMIT requests per IP within WINDOW_MS milliseconds.
+const RATE_LIMIT = new Map(); // ip -> { count, resetAt }
+const WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const LIMITS = { "/newsletter": 5, "/contact": 5 };
+
+function checkRateLimit(ip, route) {
+  const max = LIMITS[route];
+  if (!max) return false;
+  const now = Date.now();
+  const entry = RATE_LIMIT.get(ip + route);
+  if (!entry || now > entry.resetAt) {
+    RATE_LIMIT.set(ip + route, { count: 1, resetAt: now + WINDOW_MS });
+    return false;
+  }
+  if (entry.count >= max) return true; // blocked
+  entry.count += 1;
+  return false;
+}
+
+function getClientIp(request) {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown"
+  );
+}
+
 function cors(response) {
   response.headers.set("Access-Control-Allow-Origin", process.env.CORS_ORIGINS || "*");
   response.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -144,6 +172,9 @@ async function handleRoute(request, { params }) {
 
     // POST /api/newsletter
     if (route === "/newsletter" && method === "POST") {
+      if (checkRateLimit(getClientIp(request), "/newsletter")) {
+        return cors(NextResponse.json({ error: "Trop de tentatives. Réessaie dans une heure." }, { status: 429 }));
+      }
       const body = await request.json();
       if (!isValidEmail(body.email)) {
         return cors(NextResponse.json({ error: "Email invalide" }, { status: 400 }));
@@ -174,19 +205,11 @@ async function handleRoute(request, { params }) {
       return cors(NextResponse.json(entry));
     }
 
-    // GET /api/newsletter
-    if (route === "/newsletter" && method === "GET") {
-      const items = await db
-        .collection("newsletter")
-        .find({}, { projection: { _id: 0 } })
-        .sort({ created_at: -1 })
-        .limit(1000)
-        .toArray();
-      return cors(NextResponse.json(items));
-    }
-
     // POST /api/contact
     if (route === "/contact" && method === "POST") {
+      if (checkRateLimit(getClientIp(request), "/contact")) {
+        return cors(NextResponse.json({ error: "Trop de tentatives. Réessaie dans une heure." }, { status: 429 }));
+      }
       const body = await request.json();
       if (!body.name || !isValidEmail(body.email) || !body.message || !body.message.trim()) {
         return cors(
@@ -225,22 +248,11 @@ async function handleRoute(request, { params }) {
       return cors(NextResponse.json(entry));
     }
 
-    // GET /api/contact
-    if (route === "/contact" && method === "GET") {
-      const items = await db
-        .collection("contacts")
-        .find({}, { projection: { _id: 0 } })
-        .sort({ created_at: -1 })
-        .limit(1000)
-        .toArray();
-      return cors(NextResponse.json(items));
-    }
-
     return cors(NextResponse.json({ error: `Route ${route} not found` }, { status: 404 }));
   } catch (err) {
     console.error("API Error:", err);
     return cors(
-      NextResponse.json({ error: "Internal server error", detail: String(err?.message || err) }, { status: 500 })
+      NextResponse.json({ error: "Une erreur est survenue. Réessaie dans un instant." }, { status: 500 })
     );
   }
 }
