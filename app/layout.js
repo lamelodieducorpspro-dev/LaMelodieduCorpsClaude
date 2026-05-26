@@ -1,7 +1,22 @@
 import "./globals.css";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import Layout from "@/components/site/Layout";
 import StructuredData from "@/components/site/StructuredData";
 import { localBusinessJsonLd, websiteJsonLd, SITE_BASE_URL, OG_IMAGE } from "@/lib/seo";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL(SITE_BASE_URL),
@@ -55,14 +70,8 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${cormorant.variable} ${manrope.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         <StructuredData id="jsonld-localbusiness" data={localBusinessJsonLd} />
         <StructuredData id="jsonld-website" data={websiteJsonLd} />
       </head>

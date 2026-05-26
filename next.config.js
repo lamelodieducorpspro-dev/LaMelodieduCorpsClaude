@@ -57,9 +57,7 @@ const nextConfig = {
       { protocol: "https", hostname: "lh3.googleusercontent.com" }, // Google profile pictures shown in Elfsight reviews
     ],
   },
-  experimental: {
-    serverComponentsExternalPackages: ["mongodb"],
-  },
+  serverExternalPackages: ["mongodb"],
   webpack(config, { dev }) {
     if (dev) {
       config.watchOptions = { poll: 2000, aggregateTimeout: 300, ignored: ["**/node_modules"] };

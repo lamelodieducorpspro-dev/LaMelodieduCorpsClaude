@@ -16,8 +16,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        serif: ["'Cormorant Garamond'", "Georgia", "serif"],
-        sans: ["'Manrope'", "-apple-system", "sans-serif"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        sans: ["var(--font-manrope)", "-apple-system", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

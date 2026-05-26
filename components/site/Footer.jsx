@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Facebook, Phone, Mail, MapPin } from "lucide-react";
 import { WHATSAPP_LINK, WHATSAPP_DISPLAY, EMAIL, ADDRESS, INSTAGRAM, FACEBOOK, IMG } from "@/lib/constants";
 
@@ -10,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <div className="flex items-center gap-3 mb-5">
-            <img src={IMG.logo} alt="" className="w-12 h-12 rounded-full" />
+            <Image src={IMG.logo} alt="" width={48} height={48} className="w-12 h-12 rounded-full" />
             <span className="font-serif text-2xl text-white">La Mélodie du Corps</span>
           </div>
           <p className="text-sm leading-relaxed text-[#D5C8B5] mb-6">
