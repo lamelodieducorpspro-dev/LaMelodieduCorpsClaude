@@ -3,34 +3,51 @@ import { v4 as uuidv4 } from "uuid";
 import { NextResponse } from "next/server";
 
 // ---------- MongoDB connection ----------
+// maxPoolSize:1 + serverSelectionTimeoutMS are tuned for serverless (Vercel)
+// where each function invocation may open its own connection.
 let client;
 let db;
 async function connectToMongo() {
   if (!client) {
-    client = new MongoClient(process.env.MONGO_URL);
+    client = new MongoClient(process.env.MONGO_URL, {
+      maxPoolSize: 1,
+      serverSelectionTimeoutMS: 5000,
+    });
     await client.connect();
     db = client.db(process.env.DB_NAME || "melodie_du_corps");
+    // TTL index so MongoDB auto-deletes expired rate limit entries.
+    await db.collection("rate_limits").createIndex(
+      { reset_at: 1 },
+      { expireAfterSeconds: 0, background: true }
+    );
   }
   return db;
 }
 
-// ---------- Rate limiter ----------
-// Allows max LIMIT requests per IP within WINDOW_MS milliseconds.
-const RATE_LIMIT = new Map(); // ip -> { count, resetAt }
+// ---------- Rate limiter (MongoDB-backed) ----------
+// Works across multiple serverless instances (Vercel) unlike an in-memory Map.
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
 const LIMITS = { "/newsletter": 5, "/contact": 5 };
 
-function checkRateLimit(ip, route) {
+async function checkRateLimit(db, ip, route) {
   const max = LIMITS[route];
   if (!max) return false;
-  const now = Date.now();
-  const entry = RATE_LIMIT.get(ip + route);
-  if (!entry || now > entry.resetAt) {
-    RATE_LIMIT.set(ip + route, { count: 1, resetAt: now + WINDOW_MS });
-    return false;
-  }
-  if (entry.count >= max) return true; // blocked
-  entry.count += 1;
+  const now = new Date();
+
+  // Increment counter on the active window if it exists.
+  const result = await db.collection("rate_limits").findOneAndUpdate(
+    { ip, route, reset_at: { $gt: now } },
+    { $inc: { count: 1 } },
+    { returnDocument: "after" }
+  );
+  if (result) return result.count > max;
+
+  // No active window — start a fresh one.
+  await db.collection("rate_limits").updateOne(
+    { ip, route },
+    { $set: { count: 1, reset_at: new Date(now.getTime() + WINDOW_MS) } },
+    { upsert: true }
+  );
   return false;
 }
 
@@ -172,7 +189,7 @@ async function handleRoute(request, { params }) {
 
     // POST /api/newsletter
     if (route === "/newsletter" && method === "POST") {
-      if (checkRateLimit(getClientIp(request), "/newsletter")) {
+      if (await checkRateLimit(db, getClientIp(request), "/newsletter")) {
         return cors(NextResponse.json({ error: "Trop de tentatives. Réessaie dans une heure." }, { status: 429 }));
       }
       const body = await request.json();
@@ -207,7 +224,7 @@ async function handleRoute(request, { params }) {
 
     // POST /api/contact
     if (route === "/contact" && method === "POST") {
-      if (checkRateLimit(getClientIp(request), "/contact")) {
+      if (await checkRateLimit(db, getClientIp(request), "/contact")) {
         return cors(NextResponse.json({ error: "Trop de tentatives. Réessaie dans une heure." }, { status: 429 }));
       }
       const body = await request.json();
