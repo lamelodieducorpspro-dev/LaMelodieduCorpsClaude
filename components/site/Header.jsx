@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import NavLink from "@/components/site/NavLink";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { IMG } from "@/lib/constants";
@@ -43,7 +44,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
         <Link href="/" data-testid="header-logo" className="flex items-center gap-3 min-w-0">
-          <img src={IMG.logo} alt="La Mélodie du Corps" className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover flex-shrink-0" />
+          <Image src={IMG.logo} alt="La Mélodie du Corps" width={44} height={44} className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover flex-shrink-0" />
           <span className="font-serif text-lg md:text-[1.35rem] leading-tight text-forest whitespace-nowrap md:whitespace-normal">
             La Mélodie <span className="md:block">du Corps</span>
           </span>

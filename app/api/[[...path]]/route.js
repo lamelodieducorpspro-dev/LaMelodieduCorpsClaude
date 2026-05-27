@@ -3,15 +3,60 @@ import { v4 as uuidv4 } from "uuid";
 import { NextResponse } from "next/server";
 
 // ---------- MongoDB connection ----------
+// maxPoolSize:1 + serverSelectionTimeoutMS are tuned for serverless (Vercel)
+// where each function invocation may open its own connection.
 let client;
 let db;
 async function connectToMongo() {
   if (!client) {
-    client = new MongoClient(process.env.MONGO_URL);
+    client = new MongoClient(process.env.MONGO_URL, {
+      maxPoolSize: 1,
+      serverSelectionTimeoutMS: 5000,
+    });
     await client.connect();
     db = client.db(process.env.DB_NAME || "melodie_du_corps");
+    // TTL index so MongoDB auto-deletes expired rate limit entries.
+    await db.collection("rate_limits").createIndex(
+      { reset_at: 1 },
+      { expireAfterSeconds: 0, background: true }
+    );
   }
   return db;
+}
+
+// ---------- Rate limiter (MongoDB-backed) ----------
+// Works across multiple serverless instances (Vercel) unlike an in-memory Map.
+const WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const LIMITS = { "/newsletter": 5, "/contact": 5 };
+
+async function checkRateLimit(db, ip, route) {
+  const max = LIMITS[route];
+  if (!max) return false;
+  const now = new Date();
+
+  // Increment counter on the active window if it exists.
+  const result = await db.collection("rate_limits").findOneAndUpdate(
+    { ip, route, reset_at: { $gt: now } },
+    { $inc: { count: 1 } },
+    { returnDocument: "after" }
+  );
+  if (result) return result.count > max;
+
+  // No active window — start a fresh one.
+  await db.collection("rate_limits").updateOne(
+    { ip, route },
+    { $set: { count: 1, reset_at: new Date(now.getTime() + WINDOW_MS) } },
+    { upsert: true }
+  );
+  return false;
+}
+
+function getClientIp(request) {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
+    request.headers.get("x-real-ip") ||
+    "unknown"
+  );
 }
 
 function cors(response) {
@@ -29,7 +74,7 @@ export async function OPTIONS() {
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "lamelodieducorps.pro@gmail.com";
 const FROM_EMAIL = process.env.FROM_EMAIL || "contact@lamelodieducorps.com";
-const SITE_URL = process.env.SITE_URL || "https://www.lamelodieducorps.com";
+const SITE_URL = process.env.SITE_URL || "https://lamelodieducorps.com";
 const GUIDE_PDF_URL = process.env.GUIDE_PDF_URL || "";
 
 async function sendEmail({ to, subject, html, replyTo }) {
@@ -144,6 +189,9 @@ async function handleRoute(request, { params }) {
 
     // POST /api/newsletter
     if (route === "/newsletter" && method === "POST") {
+      if (await checkRateLimit(db, getClientIp(request), "/newsletter")) {
+        return cors(NextResponse.json({ error: "Trop de tentatives. Réessaie dans une heure." }, { status: 429 }));
+      }
       const body = await request.json();
       if (!isValidEmail(body.email)) {
         return cors(NextResponse.json({ error: "Email invalide" }, { status: 400 }));
@@ -174,19 +222,11 @@ async function handleRoute(request, { params }) {
       return cors(NextResponse.json(entry));
     }
 
-    // GET /api/newsletter
-    if (route === "/newsletter" && method === "GET") {
-      const items = await db
-        .collection("newsletter")
-        .find({}, { projection: { _id: 0 } })
-        .sort({ created_at: -1 })
-        .limit(1000)
-        .toArray();
-      return cors(NextResponse.json(items));
-    }
-
     // POST /api/contact
     if (route === "/contact" && method === "POST") {
+      if (await checkRateLimit(db, getClientIp(request), "/contact")) {
+        return cors(NextResponse.json({ error: "Trop de tentatives. Réessaie dans une heure." }, { status: 429 }));
+      }
       const body = await request.json();
       if (!body.name || !isValidEmail(body.email) || !body.message || !body.message.trim()) {
         return cors(
@@ -225,22 +265,11 @@ async function handleRoute(request, { params }) {
       return cors(NextResponse.json(entry));
     }
 
-    // GET /api/contact
-    if (route === "/contact" && method === "GET") {
-      const items = await db
-        .collection("contacts")
-        .find({}, { projection: { _id: 0 } })
-        .sort({ created_at: -1 })
-        .limit(1000)
-        .toArray();
-      return cors(NextResponse.json(items));
-    }
-
     return cors(NextResponse.json({ error: `Route ${route} not found` }, { status: 404 }));
   } catch (err) {
     console.error("API Error:", err);
     return cors(
-      NextResponse.json({ error: "Internal server error", detail: String(err?.message || err) }, { status: 500 })
+      NextResponse.json({ error: "Une erreur est survenue. Réessaie dans un instant." }, { status: 500 })
     );
   }
 }

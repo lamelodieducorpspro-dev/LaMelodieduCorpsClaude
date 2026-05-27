@@ -7,6 +7,7 @@ import { MapPin, Phone, Mail, MessageCircle, Send, Calendar, ArrowRight, CheckCi
 import { WHATSAPP_LINK, WHATSAPP_DISPLAY, EMAIL, ADDRESS } from "@/lib/constants";
 import { SETMORE_SERVICES } from "@/lib/setmore";
 import SEO from "@/components/site/SEO";
+import { SITE_BASE_URL } from "@/lib/seo";
 
 const API = "/api";
 
@@ -37,7 +38,7 @@ export default function Contact() {
       <SEO
         title="Prendre rendez-vous · Appel découverte gratuit · Bouillante, Guadeloupe"
         description="Réserve ton appel découverte gratuit de 15 min avec Apolline. Consultations en cabinet à Bouillante, à domicile Côte-sous-le-Vent ou en visio France entière."
-        canonical="https://www.lamelodieducorps.com/contact"
+        canonical={`${SITE_BASE_URL}/contact`}
       />
 
       <section className="pt-32 pb-12 md:pt-44">
