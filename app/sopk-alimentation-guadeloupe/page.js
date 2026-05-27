@@ -4,9 +4,9 @@ import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title:
-    "SOPK et alimentation : soutenir son équilibre hormonal naturellement | Guadeloupe",
+    "SOPK : alimentation & équilibre hormonal",
   description:
-    "Accompagnement en nutrition holistique pour mieux vivre le SOPK : cycle irrégulier, fatigue, fringales, inflammation. Consultations à Bouillante, Guadeloupe et à distance.",
+    "Mieux vivre le SOPK par l'alimentation : cycle irrégulier, fatigue, glycémie, inflammation. Accompagnement naturel à Bouillante, Guadeloupe et en visio.",
   path: "/sopk-alimentation-guadeloupe",
   keywords: [
     "SOPK",

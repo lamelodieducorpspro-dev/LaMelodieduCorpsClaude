@@ -9,7 +9,7 @@ export default function NavLink({ href, className, children, ...rest }) {
   const resolvedClassName =
     typeof className === "function" ? className({ isActive }) : className;
   return (
-    <Link href={href} className={resolvedClassName} {...rest}>
+    <Link href={href} className={resolvedClassName} aria-current={isActive ? "page" : undefined} {...rest}>
       {children}
     </Link>
   );

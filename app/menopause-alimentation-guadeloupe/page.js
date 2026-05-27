@@ -4,20 +4,19 @@ import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title:
-    "Ménopause et alimentation : retrouver énergie et sérénité naturellement | Guadeloupe",
+    "Ménopause : alimentation & équilibre naturel",
   description:
-    "Accompagnement en nutrition holistique pour mieux vivre la ménopause et la périménopause. Bouffées de chaleur, fatigue, prise de poids. Bouillante, Guadeloupe et visio.",
+    "Nutrition pour la ménopause et périménopause. Bouffées de chaleur, prise de poids, fatigue, sommeil — approche naturelle à Bouillante, Guadeloupe et en visio.",
   path: "/menopause-alimentation-guadeloupe",
   keywords: [
     "ménopause",
     "périménopause",
-    "alimentation",
-    "énergie",
-    "sérénité",
-    "nutrition holistique",
+    "ménopause alimentation",
+    "ménopause naturellement",
+    "bouffées de chaleur alimentation",
     "Guadeloupe",
     "Bouillante",
-    "bouffées de chaleur",
+    "équilibre hormonal",
     "prise de poids",
   ],
 });

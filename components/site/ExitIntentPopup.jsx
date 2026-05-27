@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { X, Sparkles } from "lucide-react";
-import axios from "axios";
 import { toast } from "sonner";
 import { IMG } from "@/lib/constants";
 
@@ -50,7 +50,12 @@ export default function ExitIntentPopup() {
     if (!email) return;
     setLoading(true);
     try {
-      await axios.post(`${API}/newsletter`, { email, source: "exit_intent" });
+      const res = await fetch(`${API}/newsletter`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "exit_intent" }),
+      });
+      if (!res.ok) throw new Error("Server error");
       setSubmitted(true);
       toast.success("Merci ! Ton guide arrive très bientôt 🌿");
     } catch (err) {
@@ -73,7 +78,7 @@ export default function ExitIntentPopup() {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="hidden md:block relative">
-          <img src={IMG.about} alt="Mon cycle, mon allié — guide gratuit nutrition holistique féminine" loading="lazy" className="w-full h-full object-cover" />
+          <Image src={IMG.about} alt="Mon cycle, mon allié — guide gratuit nutrition holistique féminine" fill sizes="(max-width: 768px) 0vw, 50vw" className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-tr from-forest/30 to-transparent" />
         </div>
         <div className="p-10 md:p-12 relative">
@@ -106,7 +111,7 @@ export default function ExitIntentPopup() {
                 />
                 <button type="submit" disabled={loading} data-testid="exit-popup-submit"
                   className="btn-primary w-full justify-center disabled:opacity-60">
-                  {loading ? "Envoi..." : "Recevoir mon guide"}
+                  {loading ? "Envoi…" : "Recevoir mon guide"}
                 </button>
               </form>
               <p className="text-xs text-[#4A5D54] mt-4">Aucun spam. Désabonnement en un clic.</p>

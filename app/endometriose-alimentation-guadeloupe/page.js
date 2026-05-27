@@ -4,14 +4,14 @@ import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title:
-    "Endométriose et alimentation anti-inflammatoire | Accompagnement holistique Guadeloupe",
+    "Endométriose & alimentation anti-inflammatoire",
   description:
-    "Accompagnement holistique pour mieux vivre l'endométriose : alimentation anti-inflammatoire, digestion, fatigue chronique. Consultations à Bouillante et à distance.",
+    "Nutrition anti-inflammatoire pour l'endométriose : douleurs, fatigue, digestion. Accompagnement naturel à Bouillante, Guadeloupe et à distance.",
   path: "/endometriose-alimentation-guadeloupe",
   keywords: [
     "endométriose",
     "alimentation anti-inflammatoire",
-    "accompagnement holistique",
+    "endométriose naturellement",
     "Guadeloupe",
     "Bouillante",
     "douleur chronique",

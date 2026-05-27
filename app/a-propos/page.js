@@ -4,20 +4,20 @@ import { buildMetadata, personJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title:
-    "Apolline · Praticienne en nutrition holistique & professeure de yoga à Bouillante, Guadeloupe",
+    "Apolline Maysounabe — Praticienne Santé Féminine",
   description:
-    "Découvrez Apolline, praticienne en nutrition santé holistique certifiée et professeure de yoga à Bouillante, Guadeloupe. Son parcours, ses valeurs, son approche globale de la santé féminine.",
+    "Apolline Maysounabe, praticienne certifiée en nutrition et santé féminine, professeure de yoga à Bouillante, Guadeloupe. Parcours et approche.",
   path: "/a-propos",
   type: "profile",
   keywords: [
-    "Apolline",
-    "nutrition holistique",
+    "Apolline Maysounabe",
+    "praticienne santé féminine",
     "professeure de yoga",
     "Kundalini Yoga",
     "Yin Yoga",
     "Bouillante",
     "Guadeloupe",
-    "santé féminine",
+    "santé hormonale féminine",
   ],
 });
 

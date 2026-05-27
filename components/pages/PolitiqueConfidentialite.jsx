@@ -1,7 +1,3 @@
-"use client";
-
-import SEO from "@/components/site/SEO";
-
 const sections = [
   {
     t: "1. Responsable du traitement",
@@ -64,7 +60,6 @@ const sections = [
 export default function PolitiqueConfidentialite() {
   return (
     <>
-      <SEO title="Politique de confidentialité · La Mélodie du Corps" description="Politique de confidentialité et protection des données personnelles sur lamelodieducorps.com." canonical="https://www.lamelodieducorps.com/politique-confidentialite" />
       <section className="pt-32 pb-20 md:pt-44">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <p className="overline mb-5">Légal</p>

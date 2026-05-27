@@ -27,14 +27,39 @@ const redirects = async () => [
   { source: "/contact-fr", destination: "/contact", permanent: true },
 ];
 
+// Sources externes connues du site :
+// - Elfsight : widget Google Reviews (scripts + assets)
+// - next/font/google auto-héberge les polices → pas besoin de fonts.googleapis.com
+// - lh3.googleusercontent.com : avatars dans les avis Google (via remotePatterns)
+// X-Frame-Options SAMEORIGIN sert de fallback pour les très vieux navigateurs
+// (les navigateurs modernes suivent le CSP frame-ancestors, qui reste à *
+//  pour permettre la prévisualisation dans l'iframe Emergent).
 const securityHeaders = [
-  // X-Frame-Options ALLOWALL pour permettre la preview Emergent dans l'iframe.
-  // La sécurité est gérée par Content-Security-Policy frame-ancestors plus bas.
   { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
-  { key: "Content-Security-Policy", value: "frame-ancestors *;" },
+  {
+    key: "Content-Security-Policy",
+    value: [
+      "default-src 'self'",
+      // Next.js inline scripts + Elfsight (platform.js + widgets)
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://static.elfsight.com https://core.service.elfsight.com",
+      // Tailwind inline styles + polices auto-hébergées
+      "style-src 'self' 'unsafe-inline'",
+      // Polices auto-hébergées via next/font
+      "font-src 'self'",
+      // Images locales + avatars Google + data URIs
+      "img-src 'self' data: blob: https://lh3.googleusercontent.com https://elfsightcdn.com https://static.elfsight.com",
+      // API interne + appels Elfsight
+      "connect-src 'self' https://service.elfsight.com https://core.service.elfsight.com https://elfsightcdn.com",
+      // Iframes Elfsight widget si nécessaire
+      "frame-src https://elfsightcdn.com https://static.elfsight.com",
+      // Permet l'intégration dans l'iframe Emergent (preview)
+      "frame-ancestors *",
+    ].join("; "),
+  },
 ];
 
 // Vercel sets VERCEL=1 automatically — use it to switch between build modes.
@@ -71,11 +96,15 @@ const nextConfig = {
     return [
       {
         source: "/(.*)",
+        headers: securityHeaders,
+      },
+      {
+        // CORS uniquement sur les routes API
+        source: "/api/(.*)",
         headers: [
-          ...securityHeaders,
           { key: "Access-Control-Allow-Origin", value: process.env.CORS_ORIGINS || "*" },
           { key: "Access-Control-Allow-Methods", value: "GET, POST, PUT, DELETE, OPTIONS" },
-          { key: "Access-Control-Allow-Headers", value: "*" },
+          { key: "Access-Control-Allow-Headers", value: "Content-Type, Authorization" },
         ],
       },
       {

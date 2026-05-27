@@ -1,13 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios";
 import { toast } from "sonner";
 import { MapPin, Phone, Mail, MessageCircle, Send, Calendar, ArrowRight, CheckCircle2 } from "lucide-react";
 import { WHATSAPP_LINK, WHATSAPP_DISPLAY, EMAIL, ADDRESS } from "@/lib/constants";
 import { SETMORE_SERVICES } from "@/lib/setmore";
-import SEO from "@/components/site/SEO";
-import { SITE_BASE_URL } from "@/lib/seo";
 
 const API = "/api";
 
@@ -22,7 +19,12 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post(`${API}/contact`, form);
+      const res = await fetch(`${API}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Server error");
       setSent(true);
       toast.success("Message envoyé ! Je reviens vers toi très vite 🌿");
       setForm({ name: "", email: "", phone: "", subject: "Appel découverte gratuit", message: "" });
@@ -35,17 +37,11 @@ export default function Contact() {
 
   return (
     <>
-      <SEO
-        title="Prendre rendez-vous · Appel découverte gratuit · Bouillante, Guadeloupe"
-        description="Réserve ton appel découverte gratuit de 15 min avec Apolline. Consultations en cabinet à Bouillante, à domicile Côte-sous-le-Vent ou en visio France entière."
-        canonical={`${SITE_BASE_URL}/contact`}
-      />
-
       <section className="pt-32 pb-12 md:pt-44">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="overline mb-5">Prendre rendez-vous</p>
           <h1 className="font-serif text-5xl md:text-7xl text-forest leading-[1.1] mb-6">
-            On se <em className="text-terracotta">parle</em> ?
+            Appel découverte <em className="text-terracotta">gratuit</em> — Santé féminine, Guadeloupe
           </h1>
           <p className="text-lg text-[#4A5D54] leading-relaxed">
             Réserve directement ta séance en ligne, ou écris-moi via le formulaire.
@@ -94,7 +90,7 @@ export default function Contact() {
                   {s.desc}
                 </p>
                 <span className={`inline-flex items-center gap-2 text-sm font-medium ${s.highlight ? "text-white" : "text-forest"}`}>
-                  Réserver <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+                  Réserver <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </a>
             ))}
@@ -177,25 +173,25 @@ export default function Contact() {
                     <div>
                       <label className="block text-xs uppercase tracking-[0.2em] text-sage mb-2">Prénom</label>
                       <input required value={form.name} onChange={handle("name")} data-testid="contact-name"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest" />
+                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/15 transition-colors" />
                     </div>
                     <div>
                       <label className="block text-xs uppercase tracking-[0.2em] text-sage mb-2">Email</label>
                       <input required type="email" value={form.email} onChange={handle("email")} data-testid="contact-email"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest" />
+                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/15 transition-colors" />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs uppercase tracking-[0.2em] text-sage mb-2">Téléphone (optionnel)</label>
-                      <input value={form.phone} onChange={handle("phone")} data-testid="contact-phone"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest" />
+                      <input type="tel" value={form.phone} onChange={handle("phone")} data-testid="contact-phone"
+                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/15 transition-colors" />
                     </div>
                     <div>
                       <label className="block text-xs uppercase tracking-[0.2em] text-sage mb-2">Sujet</label>
                       <select value={form.subject} onChange={handle("subject")} data-testid="contact-subject"
-                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest">
+                        className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 appearance-none focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/15 transition-colors">
                         <option>Appel découverte gratuit</option>
                         <option>SOPK / Endométriose / Ménopause</option>
                         <option>Cours de yoga</option>
@@ -208,7 +204,7 @@ export default function Contact() {
                     <label className="block text-xs uppercase tracking-[0.2em] text-sage mb-2">Ton message</label>
                     <textarea required rows={6} value={form.message} onChange={handle("message")} data-testid="contact-message"
                       placeholder="Parle-moi de ta situation, de ce que tu cherches…"
-                      className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest resize-none" />
+                      className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/15 transition-colors resize-none" />
                   </div>
 
                   <button type="submit" disabled={loading} data-testid="contact-submit"

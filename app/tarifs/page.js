@@ -1,21 +1,32 @@
 import Tarifs from "@/components/pages/Tarifs";
-import { buildMetadata } from "@/lib/seo";
+import StructuredData from "@/components/site/StructuredData";
+import { buildMetadata, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title:
-    "Tarifs consultations nutrition holistique & cours de yoga · Bouillante, Guadeloupe",
+  title: "Tarifs — Nutrition & Santé Féminine, Guadeloupe",
   description:
-    "Tarifs transparents : appel découverte gratuit, bilan 90€, suivi 50€, cours de yoga dès 12€. Cabinet à Bouillante, domicile Côte-sous-le-Vent ou visio.",
+    "Appel découverte gratuit · Bilan 90€ · Suivi 50€/h. Cabinet Bouillante, domicile Côte-sous-le-Vent ou visio. Certaines mutuelles remboursent partiellement.",
   path: "/tarifs",
   keywords: [
-    "tarifs nutritionniste holistique",
-    "prix consultation nutrition",
-    "tarif yoga Guadeloupe",
-    "Bouillante",
+    "tarif nutritionniste Guadeloupe",
+    "prix consultation santé féminine",
     "appel découverte gratuit",
+    "bilan nutrition Bouillante",
+    "mutuelle nutrition",
   ],
 });
 
 export default function Page() {
-  return <Tarifs />;
+  return (
+    <>
+      <StructuredData
+        id="jsonld-bc-tarifs"
+        data={buildBreadcrumb([
+          { name: "Accueil", path: "/" },
+          { name: "Tarifs", path: "/tarifs" },
+        ])}
+      />
+      <Tarifs />
+    </>
+  );
 }

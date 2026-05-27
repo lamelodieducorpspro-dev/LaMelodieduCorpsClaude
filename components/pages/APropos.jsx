@@ -1,32 +1,25 @@
-"use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, GraduationCap, Sun, Moon, BookOpen, Star } from "lucide-react";
 import { IMG, TESTIMONIALS } from "@/lib/constants";
-import SEO from "@/components/site/SEO";
 
 export default function APropos() {
   return (
     <>
-      <SEO
-        title="Apolline Maysounabe · Praticienne nutrition holistique Guadeloupe"
-        description="Ingénieure devenue praticienne en nutrition holistique certifiée Hygie Pro et professeure de yoga à Bouillante. Mon parcours, ma vision, mes engagements."
-        canonical="https://www.lamelodieducorps.com/a-propos"
-      />
       <section className="pt-32 pb-20 md:pt-44">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <p className="overline mb-5">À propos</p>
             <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] mb-6">
-              Je suis <em className="text-terracotta">Apolline</em>
+              <em className="text-terracotta">Apolline Maysounabe</em> — Praticienne en nutrition et santé féminine à Bouillante, Guadeloupe
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed">
-              Praticienne en nutrition santé holistique et professeure de yoga à Bouillante, Guadeloupe.
+              Praticienne certifiée en nutrition et santé féminine et professeure de yoga à Bouillante, Guadeloupe.
               Certification Hygie Pro · Kundalini Yoga · Yin Yoga.
             </p>
           </div>
           <div className="lg:col-span-5">
-            <img src={IMG.about} alt="Apolline" className="w-full rounded-[2rem] object-cover" />
+            <Image src={IMG.about} alt="Apolline Maysounabe, praticienne en nutrition holistique à Bouillante Guadeloupe" width={560} height={700} className="w-full rounded-[2rem] object-cover" />
           </div>
         </div>
       </section>
@@ -59,7 +52,7 @@ export default function APropos() {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-6 md:px-10">
           <h2 className="font-serif text-3xl md:text-4xl text-forest mb-10">Ma formation</h2>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
             {[
               { icon: GraduationCap, t: "Certification Hygie Pro", d: "Formation complète en nutrition santé préventive et holistique — Lisa Salis. Approche globale par l'alimentation, l'hygiène de vie et la prévention." },
               { icon: Sun, t: "Professeure de Kundalini Yoga", d: "Pratique axée sur l'énergie, la respiration, la méditation et la conscience corporelle." },
@@ -68,12 +61,14 @@ export default function APropos() {
             ].map((c) => {
               const Icon = c.icon;
               return (
-                <div key={c.t} className="bg-cream-2 rounded-[1.5rem] p-7">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-terracotta" />
+                <div key={c.t} className="flex gap-4 items-start">
+                  <div className="w-9 h-9 rounded-xl bg-cream-2 border border-[#E2DCD0] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon className="w-4 h-4 text-terracotta" />
                   </div>
-                  <h3 className="font-serif text-2xl text-forest mb-2">{c.t}</h3>
-                  <p className="text-sm text-[#4A5D54] leading-relaxed">{c.d}</p>
+                  <div>
+                    <h3 className="font-serif text-xl text-forest mb-1.5">{c.t}</h3>
+                    <p className="text-sm text-[#4A5D54] leading-relaxed">{c.d}</p>
+                  </div>
                 </div>
               );
             })}
@@ -88,16 +83,16 @@ export default function APropos() {
       <section className="py-16 bg-cream-2">
         <div className="max-w-5xl mx-auto px-6 md:px-10">
           <h2 className="font-serif text-3xl md:text-4xl text-forest mb-10">Ce en quoi je crois profondément</h2>
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
             {[
               { t: "L'autonomie avant tout", d: "Mon objectif n'est pas que tu aies besoin de moi pour toujours. C'est que tu comprennes ton corps assez bien pour faire tes propres choix en conscience." },
               { t: "La douceur plutôt que la restriction", d: "Je ne crois pas aux régimes drastiques ni aux listes d'aliments interdits. Je crois en des ajustements progressifs, réalistes et durables." },
               { t: "La globalité plutôt que le symptôme", d: "Une douleur, une fatigue, un déséquilibre hormonal — ce sont des signaux, pas des ennemis. Mon travail est de comprendre ce que ton corps essaie de te dire." },
               { t: "La présence et l'écoute", d: "Chaque personne que j'accompagne a une histoire unique. Je prends le temps de vraiment comprendre la tienne avant de proposer quoi que ce soit." },
             ].map((v) => (
-              <div key={v.t} className="bg-white rounded-[1.5rem] p-7 border border-[#E2DCD0]">
+              <div key={v.t}>
                 <h3 className="font-serif text-2xl text-forest mb-3">{v.t}</h3>
-                <p className="text-sm text-[#4A5D54] leading-relaxed">{v.d}</p>
+                <p className="text-sm text-[#4A5D54] leading-relaxed max-w-prose">{v.d}</p>
               </div>
             ))}
           </div>
@@ -107,7 +102,7 @@ export default function APropos() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
-            <img src={IMG.life3} alt="Apolline en méditation au coucher du soleil sur l'océan en Guadeloupe — moment de reconnexion à soi" loading="lazy" className="rounded-[2rem] w-full object-cover" />
+            <Image src={IMG.life3} alt="Apolline en méditation au coucher du soleil sur l'océan en Guadeloupe — moment de reconnexion à soi" width={480} height={560} className="rounded-[2rem] w-full object-cover" />
           </div>
           <div className="md:col-span-7">
             <h2 className="font-serif text-3xl md:text-4xl text-forest mb-6">La Guadeloupe comme terrain de vie</h2>

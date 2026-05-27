@@ -1,22 +1,14 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
-import SEO from "@/components/site/SEO";
 
 export default function Tarifs() {
   return (
     <>
-      <SEO
-        title="Tarifs nutritionniste holistique Guadeloupe · La Mélodie du Corps"
-        description="Tarifs transparents : appel découverte gratuit, bilan 90€, suivi 50€. Cabinet à Bouillante, domicile Côte-sous-le-Vent ou visio. Mutuelles parfois remboursées."
-        canonical="https://www.lamelodieducorps.com/tarifs"
-      />
       <section className="pt-32 pb-16 md:pt-44">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="overline mb-5">Tarifs · La Mélodie du Corps</p>
           <h1 className="font-serif text-5xl md:text-7xl text-forest leading-[1.1] mb-6">
-            Tarifs <em className="text-terracotta">clairs</em> et transparents
+            Tarifs — <em className="text-terracotta">nutrition</em> & santé féminine à Bouillante
           </h1>
           <p className="text-lg text-[#4A5D54] leading-relaxed">
             Pour que tu puisses choisir ton accompagnement en toute sérénité.

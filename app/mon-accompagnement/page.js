@@ -3,19 +3,19 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title:
-    "Accompagnement nutrition holistique & santé hormonale féminine · Bouillante, Guadeloupe",
+    "Accompagnement Santé Féminine & Nutrition",
   description:
-    "Un suivi personnalisé sur 3 à 4 mois pour mieux comprendre votre corps, soutenir votre équilibre hormonal et digestif. Cabinet à Bouillante, domicile ou visio.",
+    "Accompagnement personnalisé en nutrition et santé hormonale féminine : bilan, suivi, cabinet à Bouillante, Guadeloupe ou visio France entière.",
   path: "/mon-accompagnement",
   keywords: [
-    "accompagnement nutrition",
+    "accompagnement santé féminine",
     "santé hormonale féminine",
     "SOPK",
     "endométriose",
     "ménopause",
     "fatigue chronique",
     "troubles digestifs",
-    "nutrition holistique",
+    "nutrition",
     "Bouillante",
     "Guadeloupe",
     "visio",

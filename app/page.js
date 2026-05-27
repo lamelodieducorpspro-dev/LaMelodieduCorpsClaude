@@ -4,21 +4,21 @@ import { buildMetadata, personJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title:
-    "La Mélodie du Corps · Nutrition Holistique & Santé Féminine à Bouillante, Guadeloupe",
+    "La Mélodie du Corps — Santé Hormonale Féminine, Guadeloupe",
   description:
-    "Apolline accompagne les femmes en nutrition holistique et santé féminine à Bouillante et à distance. SOPK, endométriose, ménopause, fatigue. Appel découverte gratuit.",
+    "Apolline, praticienne en nutrition et santé féminine à Bouillante, Guadeloupe. SOPK, endométriose, ménopause, fatigue. Appel découverte gratuit.",
   path: "/",
+  absoluteTitle: true,
   keywords: [
-    "nutrition holistique",
-    "santé féminine",
-    "santé hormonale",
-    "Guadeloupe",
-    "Bouillante",
+    "santé hormonale féminine",
     "SOPK",
     "endométriose",
     "ménopause",
-    "fatigue chronique",
+    "santé féminine Guadeloupe",
+    "Bouillante",
     "appel découverte gratuit",
+    "nutrition",
+    "fatigue chronique",
   ],
 });
 

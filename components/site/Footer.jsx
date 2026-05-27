@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Facebook, Phone, Mail, MapPin } from "lucide-react";
@@ -20,15 +18,15 @@ export default function Footer() {
           </p>
           <div className="flex gap-3">
             <a href={INSTAGRAM} target="_blank" rel="noreferrer" data-testid="footer-instagram"
-              className="w-10 h-10 rounded-full border border-[#849974] flex items-center justify-center hover:bg-sage transition">
+              className="w-10 h-10 rounded-full border border-[#849974] flex items-center justify-center hover:bg-sage transition-colors">
               <Instagram className="w-4 h-4" />
             </a>
             <a href={FACEBOOK} target="_blank" rel="noreferrer" data-testid="footer-facebook"
-              className="w-10 h-10 rounded-full border border-[#849974] flex items-center justify-center hover:bg-sage transition">
+              className="w-10 h-10 rounded-full border border-[#849974] flex items-center justify-center hover:bg-sage transition-colors">
               <Facebook className="w-4 h-4" />
             </a>
             <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" data-testid="footer-whatsapp"
-              className="w-10 h-10 rounded-full border border-[#849974] flex items-center justify-center hover:bg-sage transition">
+              className="w-10 h-10 rounded-full border border-[#849974] flex items-center justify-center hover:bg-sage transition-colors">
               <Phone className="w-4 h-4" />
             </a>
           </div>

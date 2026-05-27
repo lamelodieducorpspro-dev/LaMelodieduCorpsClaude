@@ -1,21 +1,14 @@
-"use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, MapPin, ArrowRight, Check } from "lucide-react";
 import { IMG, WHATSAPP_LINK, WHATSAPP_DISPLAY } from "@/lib/constants";
-import SEO from "@/components/site/SEO";
 
 export default function Yoga() {
   return (
     <>
-      <SEO
-        title="Cours de Yoga à Bouillante, Guadeloupe · Yin & Kundalini"
-        description="Cours hebdomadaires de Yin Yoga (mercredi 18h) et Kundalini Yoga (lundi 18h) au Yoga'Niti Studio à Bouillante, Guadeloupe. Tous niveaux. À partir de 12€."
-        canonical="https://www.lamelodieducorps.com/yoga"
-      />
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <img src={IMG.yoga} alt="Cours de yoga à Bouillante, Guadeloupe — méditation et bien-être" loading="eager" className="w-full h-full object-cover opacity-30" />
+          <Image src={IMG.yoga} alt="Cours de yoga à Bouillante, Guadeloupe — méditation et bien-être" fill priority className="object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-cream via-cream/70 to-cream" />
         </div>
         <div className="max-w-5xl mx-auto px-6 md:px-10 text-center">
@@ -66,7 +59,7 @@ export default function Yoga() {
                 <p className="text-sm text-[#D5C8B5]">100€ les 10 cours · <span className="text-terracotta">économisez 20€</span></p>
               </div>
               <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer"
-                className="inline-flex w-full justify-center bg-terracotta hover:bg-[#a87863] text-white px-6 py-3.5 rounded-full font-medium transition">
+                className="inline-flex w-full justify-center bg-terracotta hover:bg-[#a87863] text-white px-6 py-3.5 rounded-full font-medium transition-colors">
                 S'inscrire
               </a>
             </div>
@@ -78,7 +71,7 @@ export default function Yoga() {
         <div className="max-w-6xl mx-auto px-6 md:px-10">
           <h2 className="font-serif text-3xl md:text-4xl text-forest mb-12 text-center">Pourquoi intégrer le yoga dans ta vie ?</h2>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <img src={IMG.yoga} alt="Cours de yoga à Bouillante, Guadeloupe — séance Yin et Kundalini Yoga sous l'arbre de vie au Yoga'Niti Studio" loading="lazy" className="rounded-[2rem] w-full object-cover" />
+            <Image src={IMG.yoga} alt="Cours de yoga à Bouillante, Guadeloupe — séance Yin et Kundalini Yoga sous l'arbre de vie au Yoga'Niti Studio" width={560} height={560} className="rounded-[2rem] w-full object-cover" />
             <div className="space-y-4 text-[#4A5D54] leading-relaxed">
               <p>
                 Le stress chronique, la charge mentale et la déconnexion au corps peuvent avoir un impact

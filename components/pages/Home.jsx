@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Star, ArrowRight, Sparkles, Heart, Moon, Brain, Eye, Leaf, MapPin, Phone, Laptop } from "lucide-react";
-import { IMG, TESTIMONIALS, WHATSAPP_LINK, WHATSAPP_DISPLAY, ADDRESS, GOOGLE_REVIEWS } from "@/lib/constants";
-import SEO from "@/components/site/SEO";
+import { IMG, TESTIMONIALS, WHATSAPP_LINK, WHATSAPP_DISPLAY, ADDRESS, GOOGLE_REVIEWS, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEW_RATING } from "@/lib/constants";
 import ElfsightWidget from "@/components/site/ElfsightWidget";
 
 const symptoms = [
@@ -45,11 +42,6 @@ const steps = [
 export default function Home() {
   return (
     <>
-      <SEO
-        title="La Mélodie du Corps · Nutrition Holistique & Santé Féminine · Guadeloupe"
-        description="Apolline accompagne les femmes en nutrition holistique et santé hormonale féminine à Bouillante, Guadeloupe et à distance. SOPK, endométriose, ménopause, fatigue. Appel découverte gratuit."
-        canonical="https://www.lamelodieducorps.com/"
-      />
       {/* HERO */}
       <section data-testid="hero-section" className="relative pt-28 pb-16 md:pt-44 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 -z-10">
@@ -83,13 +75,13 @@ export default function Home() {
                 <div className="flex items-center gap-1 mb-1">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-terracotta text-terracotta" />)}
                 </div>
-                <p className="text-xs text-[#1A2421] font-medium">7 avis · 5/5 sur Google</p>
+                <p className="text-xs text-[#1A2421] font-medium">{GOOGLE_REVIEW_COUNT} avis · {GOOGLE_REVIEW_RATING}/5 sur Google</p>
               </div>
             </div>
 
             <p className="overline mb-5">Praticienne en nutrition holistique · Guadeloupe</p>
             <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-7xl text-forest leading-[1.05] mb-6">
-              Nutrition holistique<br />
+              Nutrition<br />
               & <em className="text-terracotta">santé hormonale</em><br />
               féminine
             </h1>
@@ -129,7 +121,7 @@ export default function Home() {
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-terracotta text-terracotta" />)}
                 </div>
-                <p className="text-sm text-[#1A2421] font-medium">7 avis · 5/5 sur Google</p>
+                <p className="text-sm text-[#1A2421] font-medium">{GOOGLE_REVIEW_COUNT} avis · {GOOGLE_REVIEW_RATING}/5 sur Google</p>
                 <p className="text-xs text-[#4A5D54] mt-1">Écoute, bienveillance, professionnalisme</p>
               </div>
             </div>
@@ -138,14 +130,13 @@ export default function Home() {
       </section>
 
       {/* IDENTIFICATION */}
-      <section className="py-24 md:py-32 bg-cream-2" data-testid="identification-section">
+      <section className="py-16 md:py-24 bg-cream-2" data-testid="identification-section">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <p className="overline mb-5">Tu te reconnais ?</p>
             <h2 className="font-serif text-4xl md:text-5xl text-forest mb-6 leading-tight">
               Tu te reconnais dans l'une de ces situations ?
             </h2>
-            <p className="text-[#4A5D54] leading-relaxed mb-6">
+            <p className="text-[#4A5D54] leading-relaxed mb-6 max-w-prose">
               Tu as peut-être déjà essayé plusieurs solutions, sans résultat durable.
               Mon accompagnement t'aide à faire le lien entre tes symptômes, ton alimentation,
               ton mode de vie et ton équilibre hormonal — pour avancer avec des solutions concrètes
@@ -157,7 +148,7 @@ export default function Home() {
           </div>
           <div className="md:col-span-7 grid sm:grid-cols-2 gap-3">
             {symptoms.map((s, i) => (
-              <div key={i} className="bg-white rounded-2xl p-5 border border-[#E2DCD0] flex items-start gap-3 hover:border-sage transition">
+              <div key={i} className="bg-white rounded-2xl p-5 border border-[#E2DCD0] flex items-start gap-3 hover:border-sage transition-colors">
                 <span className="w-2 h-2 rounded-full bg-terracotta mt-2.5 flex-shrink-0"></span>
                 <span className="text-sm text-[#1A2421] leading-relaxed">{s}</span>
               </div>
@@ -167,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* SPÉCIALITÉS */}
-      <section className="py-24 md:py-32" data-testid="specialties-section">
+      <section className="py-28 md:py-40" data-testid="specialties-section">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="max-w-2xl mb-16">
             <p className="overline mb-5">Mes spécialités</p>
@@ -195,7 +186,7 @@ export default function Home() {
                   <h3 className="font-serif text-2xl text-forest mb-3">{sp.title}</h3>
                   <p className="text-sm text-[#4A5D54] leading-relaxed mb-5">{sp.desc}</p>
                   <span className="inline-flex items-center gap-2 text-sm text-forest font-medium">
-                    En savoir plus <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+                    En savoir plus <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </Link>
@@ -205,28 +196,30 @@ export default function Home() {
       </section>
 
       {/* APPROCHE 6 piliers */}
-      <section className="py-24 md:py-32 bg-cream-2" data-testid="approach-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl mb-16">
+      <section className="py-20 md:py-28 bg-cream-2" data-testid="approach-section">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+          <div className="lg:col-span-4">
             <p className="overline mb-5">Mon approche</p>
             <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight mb-5">
               Une autre façon de prendre soin de sa santé
             </h2>
-            <p className="text-[#4A5D54] leading-relaxed">
+            <p className="text-[#4A5D54] leading-relaxed max-w-prose">
               C'est apprendre à mieux se connaître, écouter les signaux du corps
               et mettre en place des ajustements progressifs qui respectent ton rythme.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-9">
             {pillars.map((p) => {
               const Icon = p.icon;
               return (
-                <div key={p.title} className="bg-white rounded-[1.5rem] p-8 border border-[#E2DCD0]">
-                  <div className="w-12 h-12 rounded-full bg-cream-2 flex items-center justify-center mb-5">
-                    <Icon className="w-5 h-5 text-terracotta" />
+                <div key={p.title} className="flex gap-4 items-start">
+                  <div className="w-9 h-9 rounded-xl bg-cream border border-[#E2DCD0] flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon className="w-4 h-4 text-terracotta" />
                   </div>
-                  <h3 className="font-serif text-2xl text-forest mb-3">{p.title}</h3>
-                  <p className="text-sm text-[#4A5D54] leading-relaxed">{p.desc}</p>
+                  <div>
+                    <h3 className="font-serif text-xl text-forest mb-1.5">{p.title}</h3>
+                    <p className="text-sm text-[#4A5D54] leading-relaxed">{p.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -237,8 +230,7 @@ export default function Home() {
       {/* DÉROULEMENT */}
       <section className="py-24 md:py-32" data-testid="process-section">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl mb-16">
-            <p className="overline mb-5">Comment ça se passe</p>
+          <div className="max-w-2xl mb-14">
             <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
               Concrètement, comment ça se passe ?
             </h2>
@@ -268,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* QUI JE SUIS */}
-      <section className="py-24 md:py-32 bg-cream-2" data-testid="about-section">
+      <section className="py-20 md:py-28 bg-cream-2" data-testid="about-section">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <Image
@@ -287,7 +279,7 @@ export default function Home() {
             <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight mb-6">
               Je suis <em className="text-terracotta">Apolline</em>
             </h2>
-            <div className="space-y-4 text-[#4A5D54] leading-relaxed mb-8">
+            <div className="space-y-4 text-[#4A5D54] leading-relaxed mb-8 max-w-prose">
               <p>
                 Ingénieure de formation, j'ai traversé ma propre quête de sens avant de me former
                 à la nutrition santé préventive et holistique — certification Hygie Pro — et d'obtenir
@@ -311,16 +303,16 @@ export default function Home() {
       </section>
 
       {/* TÉMOIGNAGES */}
-      <section className="py-24 md:py-32" data-testid="testimonials-section">
+      <section className="py-16 md:py-24" data-testid="testimonials-section">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <p className="overline mb-5">Témoignages · Avis Google vérifiés</p>
             <h2 className="font-serif text-4xl md:text-5xl text-forest leading-tight">
               Ce qu'en disent mes clientes
             </h2>
             <div className="flex items-center justify-center gap-1 mt-5">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-terracotta text-terracotta" />)}
-              <span className="ml-2 text-sm text-[#4A5D54]">7 avis · 5/5 sur Google</span>
+              <span className="ml-2 text-sm text-[#4A5D54]">{GOOGLE_REVIEW_COUNT} avis · {GOOGLE_REVIEW_RATING}/5 sur Google</span>
             </div>
           </div>
 

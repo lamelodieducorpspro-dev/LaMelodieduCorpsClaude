@@ -31,6 +31,9 @@ dist/
 dist
 
 # Environment files (comprehensive coverage)
+.env
+.env.local
+.env*.local
 *token.json*
 *credentials.json*
 
@@ -56,6 +59,9 @@ chainlit.md
 .chainlit
 .ipynb_checkpoints/
 .ac
+.claude/
+.agents/
+skills-lock.json
 
 # Deployment
 .vercel

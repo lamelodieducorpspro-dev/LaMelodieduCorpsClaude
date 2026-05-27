@@ -1,9 +1,8 @@
-"use client";
-
 import { Star, GraduationCap, Leaf, Laptop } from "lucide-react";
+import { GOOGLE_REVIEW_COUNT, GOOGLE_REVIEW_RATING } from "@/lib/constants";
 
 const items = [
-  { icon: Star, text: "7 avis 5/5 sur Google" },
+  { icon: Star, text: `${GOOGLE_REVIEW_COUNT} avis ${GOOGLE_REVIEW_RATING}/5 sur Google` },
   { icon: GraduationCap, text: "Certifiée Hygie Pro" },
   { icon: Leaf, text: "Approche naturelle & holistique" },
   { icon: Laptop, text: "Consultations à distance" },
@@ -12,7 +11,7 @@ const items = [
 export default function ReassuranceBanner() {
   const repeated = [...items, ...items, ...items];
   return (
-    <div data-testid="reassurance-banner" className="bg-cream-2 border-y border-[#E2DCD0] py-5">
+    <div data-testid="reassurance-banner" className="bg-cream-2 border-y border-[#E2DCD0] py-5" aria-hidden="true">
       <div className="marquee">
         <div className="marquee-track">
           {repeated.map((it, i) => {

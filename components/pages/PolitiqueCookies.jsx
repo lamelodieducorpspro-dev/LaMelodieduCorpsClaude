@@ -1,7 +1,3 @@
-"use client";
-
-import SEO from "@/components/site/SEO";
-
 const sections = [
   {
     t: "1. Qu'est-ce qu'un cookie ?",
@@ -39,7 +35,6 @@ const sections = [
 export default function PolitiqueCookies() {
   return (
     <>
-      <SEO title="Politique des cookies · La Mélodie du Corps" description="Information sur l'utilisation des cookies sur lamelodieducorps.com." canonical="https://www.lamelodieducorps.com/politique-cookies" />
       <section className="pt-32 pb-20 md:pt-44">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <p className="overline mb-5">Légal</p>

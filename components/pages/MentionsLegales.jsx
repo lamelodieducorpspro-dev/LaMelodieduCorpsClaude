@@ -1,7 +1,3 @@
-"use client";
-
-import SEO from "@/components/site/SEO";
-
 const items = [
   { label: "Nom commercial", value: "La Mélodie du Corps" },
   { label: "Nom", value: "Apolline Maysounabe" },
@@ -18,7 +14,6 @@ const items = [
 export default function MentionsLegales() {
   return (
     <>
-      <SEO title="Mentions légales · La Mélodie du Corps" description="Mentions légales du site lamelodieducorps.com." canonical="https://www.lamelodieducorps.com/mentions-legales" />
       <section className="pt-32 pb-20 md:pt-44">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <p className="overline mb-5">Légal</p>

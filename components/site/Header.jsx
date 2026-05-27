@@ -58,12 +58,16 @@ export default function Header() {
                 className="relative"
                 onMouseEnter={() => setSpecOpen(true)}
                 onMouseLeave={() => setSpecOpen(false)}
+                onKeyDown={(e) => e.key === "Escape" && setSpecOpen(false)}
               >
                 <button
                   data-testid="nav-specialites-trigger"
-                  className="flex items-center gap-1 text-sm tracking-wide text-[#1A2421] hover:text-forest transition"
+                  aria-expanded={specOpen}
+                  aria-haspopup="true"
+                  onClick={() => setSpecOpen(!specOpen)}
+                  className="flex items-center gap-1 text-sm tracking-wide text-[#1A2421] hover:text-forest transition-colors"
                 >
-                  {item.label} <ChevronDown className="w-4 h-4" />
+                  {item.label} <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 </button>
                 {specOpen && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-56">
@@ -73,7 +77,7 @@ export default function Header() {
                           key={c.to}
                           href={c.to}
                           data-testid={`nav-sub-${c.label.toLowerCase()}`}
-                          className="block px-5 py-3 text-sm text-[#1A2421] hover:bg-cream-2 hover:text-forest transition"
+                          className="block px-5 py-3 text-sm text-[#1A2421] hover:bg-cream-2 hover:text-forest transition-colors"
                         >
                           {c.label}
                         </NavLink>

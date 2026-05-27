@@ -1,22 +1,38 @@
 import FAQ from "@/components/pages/FAQ";
-import { buildMetadata } from "@/lib/seo";
+import StructuredData from "@/components/site/StructuredData";
+import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
+import { faqCategories } from "@/lib/faq-data";
 
 export const metadata = buildMetadata({
-  title:
-    "FAQ · Nutrition holistique, SOPK, endométriose, ménopause & yoga — La Mélodie du Corps",
+  title: "FAQ — Nutrition, SOPK & Santé Féminine",
   description:
-    "Réponses aux questions fréquentes sur la nutrition holistique, l'accompagnement SOPK/endométriose/ménopause et les cours de yoga à Bouillante. Tout savoir avant ton RDV.",
+    "Toutes vos questions sur la nutrition et la santé féminine : SOPK, endométriose, ménopause. Réponses claires avant votre premier rendez-vous.",
   path: "/faq",
   keywords: [
-    "FAQ nutrition holistique",
-    "SOPK questions",
-    "endométriose alimentation",
-    "ménopause nutrition",
+    "FAQ SOPK",
+    "FAQ endométriose alimentation",
+    "FAQ ménopause nutrition",
+    "santé féminine questions",
     "Bouillante",
     "yoga questions",
   ],
 });
 
 export default function Page() {
-  return <FAQ />;
+  return (
+    <>
+      <StructuredData
+        id="jsonld-faq"
+        data={buildFAQJsonLd(faqCategories.flatMap((cat) => cat.items))}
+      />
+      <StructuredData
+        id="jsonld-bc-faq"
+        data={buildBreadcrumb([
+          { name: "Accueil", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ])}
+      />
+      <FAQ />
+    </>
+  );
 }

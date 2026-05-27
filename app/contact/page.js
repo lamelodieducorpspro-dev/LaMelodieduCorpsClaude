@@ -1,21 +1,32 @@
 import Contact from "@/components/pages/Contact";
-import { buildMetadata } from "@/lib/seo";
+import StructuredData from "@/components/site/StructuredData";
+import { buildMetadata, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title:
-    "Prendre rendez-vous · Appel découverte gratuit · Bouillante, Guadeloupe",
+  title: "Appel découverte gratuit — Santé Féminine Guadeloupe",
   description:
-    "Réserve ton appel découverte gratuit de 15 min avec Apolline. Consultations en cabinet à Bouillante, à domicile Côte-sous-le-Vent ou en visio France entière.",
+    "Réservez votre appel découverte gratuit de 15 min avec Apolline. Cabinet à Bouillante, domicile ou visio France entière. Sans engagement.",
   path: "/contact",
   keywords: [
-    "prendre rendez-vous",
     "appel découverte gratuit",
-    "nutritionniste Bouillante",
-    "contact nutrition Guadeloupe",
-    "réservation Setmore",
+    "prendre rendez-vous santé féminine Guadeloupe",
+    "SOPK rendez-vous",
+    "contact Bouillante",
+    "réservation visio",
   ],
 });
 
 export default function Page() {
-  return <Contact />;
+  return (
+    <>
+      <StructuredData
+        id="jsonld-bc-contact"
+        data={buildBreadcrumb([
+          { name: "Accueil", path: "/" },
+          { name: "Prendre rendez-vous", path: "/contact" },
+        ])}
+      />
+      <Contact />
+    </>
+  );
 }

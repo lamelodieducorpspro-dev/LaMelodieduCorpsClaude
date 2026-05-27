@@ -1,9 +1,7 @@
-"use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Check, MapPin, Car, Laptop, Sparkles, Heart, Moon, Brain, Leaf, Wind } from "lucide-react";
 import { IMG } from "@/lib/constants";
-import SEO from "@/components/site/SEO";
 
 const pourQui = [
   "Souffre de SOPK, d'endométriose ou de troubles du cycle",
@@ -27,17 +25,12 @@ const leviers = [
 export default function Accompagnement() {
   return (
     <>
-      <SEO
-        title="Accompagnement nutrition holistique Guadeloupe · Apolline"
-        description="Praticienne en nutrition holistique à Bouillante : SOPK, endométriose, ménopause, fatigue. Suivi personnalisé cabinet, domicile ou visio. Appel découverte gratuit."
-        canonical="https://www.lamelodieducorps.com/accompagnement"
-      />
       <section className="pt-32 pb-16 md:pt-44 md:pb-24">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <p className="overline mb-5">Mon accompagnement</p>
             <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] mb-6">
-              Accompagnement en <em className="text-terracotta">nutrition holistique</em> et santé féminine
+              Accompagnement en <em className="text-terracotta">nutrition</em> et santé hormonale féminine à Bouillante
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed mb-6">
               Un suivi global, personnalisé et progressif — spécialisé en santé hormonale féminine.
@@ -53,7 +46,7 @@ export default function Accompagnement() {
             </Link>
           </div>
           <div className="lg:col-span-5">
-            <img src={IMG.life1} alt="" className="w-full rounded-[2rem] object-cover" />
+            <Image src={IMG.life1} alt="" width={560} height={560} className="w-full rounded-[2rem] object-cover" />
           </div>
         </div>
       </section>
