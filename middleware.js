@@ -26,26 +26,11 @@ const ACCENT_REDIRECTS = {
 };
 
 export function middleware(request) {
-  const { nextUrl, headers } = request;
-  const host = (headers.get("host") || "").toLowerCase();
-  const proto = (headers.get("x-forwarded-proto") || nextUrl.protocol.replace(":", "")).toLowerCase();
-  const isProdHost = ALL_PROD_HOSTS.has(host);
+  const { nextUrl } = request;
 
-  // ---- 1) Force HTTPS + canonical host on production hosts ----
-  // Skip when running on preview/localhost so dev keeps working.
-  if (isProdHost) {
-    const needsHttps = proto !== "https";
-    const needsCanonicalHost = host !== CANONICAL_HOST;
-    if (needsHttps || needsCanonicalHost) {
-      const target = new URL(
-        nextUrl.pathname + nextUrl.search,
-        `https://${CANONICAL_HOST}`
-      );
-      return NextResponse.redirect(target, 301);
-    }
-  }
-
-  // ---- 2) Accent-stripped 301 redirects ----
+  // ---- 1) Accent-stripped 301 redirects ----
+  // Note: HTTPS and canonical host (non-www) redirection is handled by Vercel/Emergent platform.
+  // This middleware only handles accent-stripped redirects to avoid conflicts.
   // decodeURIComponent handles "%C3%A0" / "%C3%A9" / etc.
   let decoded = nextUrl.pathname;
   try {
