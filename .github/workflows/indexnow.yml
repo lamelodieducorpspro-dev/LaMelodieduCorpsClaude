@@ -1,0 +1,15 @@
+name: IndexNow — soumettre URLs à Bing après déploiement
+
+on:
+  deployment_status:
+
+jobs:
+  ping-indexnow:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Appeler /api/indexnow
+        run: |
+          curl -sf -X POST https://lamelodieducorps.com/api/indexnow \
+            -H "x-indexnow-secret: ${{ secrets.INDEXNOW_SECRET }}" \
+            -w "\nHTTP %{http_code}"
