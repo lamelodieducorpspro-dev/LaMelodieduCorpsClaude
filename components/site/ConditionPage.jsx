@@ -94,7 +94,7 @@ export default function ConditionPage({
                   key={i}
                   className="bg-white rounded-2xl p-6 border border-[#E2DCD0] flex flex-col gap-4"
                 >
-                  <div className="w-11 h-11 rounded-2xl bg-cream-2 flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 rounded-2xl bg-[#FAF0E9] flex items-center justify-center flex-shrink-0">
                     <Icon className="w-5 h-5 text-terracotta" />
                   </div>
                   <div>
@@ -152,7 +152,7 @@ export default function ConditionPage({
                   const Icon = l.icon;
                   return (
                     <div key={i} className="bg-cream-2 rounded-2xl p-5 flex gap-4 items-start">
-                      <div className="w-9 h-9 rounded-xl bg-white border border-[#E2DCD0] flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-9 h-9 rounded-xl bg-[#EDF3EF] flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Icon className="w-4 h-4 text-sage" />
                       </div>
                       <div>
@@ -180,7 +180,7 @@ export default function ConditionPage({
               >
                 {/* Watermark number */}
                 <div
-                  className="absolute top-2 right-4 font-serif text-7xl text-[#E2DCD0] leading-none select-none pointer-events-none"
+                  className="absolute top-2 right-4 font-serif text-7xl text-[#DDB99F] leading-none select-none pointer-events-none"
                   aria-hidden="true"
                 >
                   {String(i + 1).padStart(2, "0")}

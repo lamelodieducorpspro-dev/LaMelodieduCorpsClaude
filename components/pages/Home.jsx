@@ -213,7 +213,7 @@ export default function Home() {
               const Icon = p.icon;
               return (
                 <div key={p.title} className="flex gap-4 items-start">
-                  <div className="w-9 h-9 rounded-xl bg-cream border border-[#E2DCD0] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-9 h-9 rounded-xl bg-[#FAF0E9] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Icon className="w-4 h-4 text-terracotta" />
                   </div>
                   <div>
@@ -246,7 +246,7 @@ export default function Home() {
                   <p className="text-[#4A5D54] leading-relaxed">{s.desc}</p>
                 </div>
                 <div className="md:col-span-3 flex md:justify-end md:items-center">
-                  <span className="inline-block bg-cream-2 text-forest text-sm px-4 py-2 rounded-full font-medium">{s.price}</span>
+                  <span className="inline-block text-terracotta text-sm font-medium">{s.price}</span>
                 </div>
               </div>
             ))}

@@ -11,16 +11,16 @@ const items = [
 export default function ReassuranceBanner() {
   const repeated = [...items, ...items, ...items];
   return (
-    <div data-testid="reassurance-banner" className="bg-cream-2 border-y border-[#E2DCD0] py-5" aria-hidden="true">
+    <div data-testid="reassurance-banner" className="bg-forest py-5" aria-hidden="true">
       <div className="marquee">
         <div className="marquee-track">
           {repeated.map((it, i) => {
             const Icon = it.icon;
             return (
-              <span key={i} className="inline-flex items-center gap-3 text-forest font-serif text-lg">
+              <span key={i} className="inline-flex items-center gap-3 text-[#D5C8B5] font-serif text-lg">
                 <Icon className="w-5 h-5 text-terracotta" />
                 {it.text}
-                <span className="text-sage mx-2">·</span>
+                <span className="text-terracotta/50 mx-2">·</span>
               </span>
             );
           })}
