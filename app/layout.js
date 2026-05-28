@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Layout from "@/components/site/Layout";
 import StructuredData from "@/components/site/StructuredData";
 import { localBusinessJsonLd, websiteJsonLd, SITE_BASE_URL, OG_IMAGE } from "@/lib/seo";
@@ -78,6 +79,7 @@ export default function RootLayout({ children }) {
       <body className="bg-cream text-[#1A2421] font-sans antialiased">
         <Layout>{children}</Layout>
       </body>
+      <GoogleAnalytics gaId="G-C5CXH3XK2D" />
     </html>
   );
 }
