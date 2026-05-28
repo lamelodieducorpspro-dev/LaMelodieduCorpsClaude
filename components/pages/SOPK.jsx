@@ -19,7 +19,7 @@ export default function SOPK() {
   return (
     <ConditionPage
       overline="Santé hormonale féminine · SOPK"
-      h1="SOPK et alimentation : soutenir son équilibre hormonal naturellement"
+      h1="SOPK et Alimentation : soutenir son équilibre hormonal naturellement"
       heroImg={IMG.sopk}
       heroAlt="SOPK et alimentation : accompagnement nutritionnel par Apolline à Bouillante, Guadeloupe"
       intro="Cycles irréguliers, fatigue persistante, acné hormonale, fringales intenses… Le SOPK impacte bien plus que le seul cycle menstruel. L'alimentation est l'un des leviers les plus puissants pour retrouver plus de confort et de stabilité — sans régime, sans liste d'interdits."

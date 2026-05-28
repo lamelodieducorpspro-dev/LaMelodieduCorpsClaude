@@ -8,7 +8,7 @@ export default function Tarifs() {
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="overline mb-5">Tarifs · La Mélodie du Corps</p>
           <h1 className="font-serif text-5xl md:text-7xl text-forest leading-[1.1] mb-6">
-            Tarifs — <em className="text-terracotta">nutrition</em> & santé féminine à Bouillante
+            Tarifs — <em className="text-terracotta">Nutrition</em> & <em className="text-terracotta">Santé féminine</em> à Bouillante
           </h1>
           <p className="text-lg text-[#4A5D54] leading-relaxed">
             Pour que tu puisses choisir ton accompagnement en toute sérénité.

@@ -30,7 +30,7 @@ export default function Accompagnement() {
           <div className="lg:col-span-7">
             <p className="overline mb-5">Mon accompagnement</p>
             <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] mb-6">
-              Accompagnement en <em className="text-terracotta">nutrition</em> et santé hormonale féminine à Bouillante
+              Accompagnement en <em className="text-terracotta">Nutrition</em> et <em className="text-terracotta">Santé hormonale féminine</em> à Bouillante
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed mb-6">
               Un suivi global, personnalisé et progressif — spécialisé en santé hormonale féminine.

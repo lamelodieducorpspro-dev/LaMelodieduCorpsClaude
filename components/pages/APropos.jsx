@@ -11,7 +11,7 @@ export default function APropos() {
           <div className="lg:col-span-7">
             <p className="overline mb-5">À propos</p>
             <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] mb-6">
-              <em className="text-terracotta">Apolline Maysounabe</em> — Praticienne en nutrition et santé féminine à Bouillante, Guadeloupe
+              <em className="text-terracotta">Apolline Maysounabe</em> — Praticienne en Nutrition et Santé féminine à Bouillante, Guadeloupe
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed">
               Praticienne certifiée en nutrition et santé féminine et professeure de yoga à Bouillante, Guadeloupe.

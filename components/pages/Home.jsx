@@ -82,7 +82,7 @@ export default function Home() {
             <p className="overline mb-5">Praticienne en nutrition holistique · Guadeloupe</p>
             <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-7xl text-forest leading-[1.05] mb-6">
               Nutrition &amp;{" "}
-              <em className="text-terracotta">santé hormonale</em>
+              <em className="text-terracotta">Santé hormonale</em>
               {" "}féminine
             </h1>
             <p className="text-lg text-[#4A5D54] max-w-xl mb-8 leading-relaxed">

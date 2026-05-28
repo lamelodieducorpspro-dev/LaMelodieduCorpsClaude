@@ -14,7 +14,7 @@ export default function FAQ() {
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="overline mb-5">FAQ</p>
           <h1 className="font-serif text-5xl md:text-7xl text-forest leading-[1.1] mb-6">
-            Questions fréquentes sur la nutrition, le <em className="text-terracotta">SOPK</em> et l&apos;endométriose
+            Questions fréquentes sur la Nutrition, le <em className="text-terracotta">SOPK</em> et l&apos;Endométriose
           </h1>
           <p className="text-lg text-[#4A5D54] leading-relaxed">
             Les questions qu&apos;on me pose le plus souvent — et leurs réponses.
