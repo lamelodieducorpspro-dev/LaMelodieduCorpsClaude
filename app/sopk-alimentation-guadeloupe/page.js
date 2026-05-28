@@ -3,8 +3,7 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title:
-    "SOPK : alimentation & équilibre hormonal",
+  title: "SOPK & alimentation hormonale",
   description:
     "Mieux vivre le SOPK par l'alimentation : cycle irrégulier, fatigue, glycémie, inflammation. Accompagnement naturel à Bouillante, Guadeloupe et en visio.",
   path: "/sopk-alimentation-guadeloupe",

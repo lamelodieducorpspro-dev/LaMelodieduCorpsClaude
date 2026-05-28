@@ -6,7 +6,7 @@ import { faqCategories } from "@/lib/faq-data";
 export const metadata = buildMetadata({
   title: "FAQ — Nutrition, SOPK & Santé Féminine",
   description:
-    "Toutes vos questions sur la nutrition et la santé féminine : SOPK, endométriose, ménopause. Réponses claires avant votre premier rendez-vous.",
+    "Toutes tes questions sur la nutrition et la santé féminine : SOPK, endométriose, ménopause, fatigue. Apolline répond clairement pour t'aider à faire le bon choix.",
   path: "/faq",
   keywords: [
     "FAQ SOPK",

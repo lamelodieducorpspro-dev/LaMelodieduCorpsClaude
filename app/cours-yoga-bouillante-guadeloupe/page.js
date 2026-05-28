@@ -5,7 +5,7 @@ import { buildMetadata, buildBreadcrumb, SITE_BASE_URL } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Yoga Bouillante — Yin & Kundalini Yoga",
   description:
-    "Cours de Kundalini Yoga (lundi) et Yin Yoga (mercredi) à Bouillante, Guadeloupe. Yoga'Niti Studio. Dès 12€. Réservation par WhatsApp.",
+    "Cours de Kundalini Yoga (lundi 18h) et Yin Yoga (mercredi 18h) à Bouillante, Guadeloupe. Yoga'Niti Studio. Dès 12€. Inscription par WhatsApp.",
   path: "/cours-yoga-bouillante-guadeloupe",
   type: "website",
   keywords: [

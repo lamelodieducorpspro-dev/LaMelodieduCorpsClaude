@@ -3,8 +3,7 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title:
-    "Endométriose & alimentation anti-inflammatoire",
+  title: "Endométriose & nutrition naturelle",
   description:
     "Nutrition anti-inflammatoire pour l'endométriose : douleurs, fatigue, digestion. Accompagnement naturel à Bouillante, Guadeloupe et à distance.",
   path: "/endometriose-alimentation-guadeloupe",

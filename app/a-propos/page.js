@@ -3,10 +3,9 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, personJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title:
-    "Apolline Maysounabe — Praticienne Santé Féminine",
+  title: "Apolline Maysounabe — praticienne",
   description:
-    "Apolline Maysounabe, praticienne certifiée en nutrition et santé féminine, professeure de yoga à Bouillante, Guadeloupe. Parcours et approche.",
+    "Apolline Maysounabe, praticienne en nutrition holistique et santé féminine à Bouillante, Guadeloupe. Certifiée, passionnée par la santé féminine naturelle. Découvre son parcours.",
   path: "/a-propos",
   type: "profile",
   keywords: [

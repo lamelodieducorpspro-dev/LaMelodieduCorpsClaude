@@ -81,9 +81,9 @@ export default function Home() {
 
             <p className="overline mb-5">Praticienne en nutrition holistique · Guadeloupe</p>
             <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-7xl text-forest leading-[1.05] mb-6">
-              Nutrition<br />
-              & <em className="text-terracotta">santé hormonale</em><br />
-              féminine
+              Nutrition &amp;{" "}
+              <em className="text-terracotta">santé hormonale</em>
+              {" "}féminine
             </h1>
             <p className="text-lg text-[#4A5D54] max-w-xl mb-8 leading-relaxed">
               Tu souffres de SOPK, d'endométriose, de fatigue chronique ou de troubles du cycle ?

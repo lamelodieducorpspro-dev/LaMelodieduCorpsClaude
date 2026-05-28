@@ -3,9 +3,9 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Appel découverte gratuit — Santé Féminine Guadeloupe",
+  title: "Appel découverte gratuit — Guadeloupe",
   description:
-    "Réservez votre appel découverte gratuit de 15 min avec Apolline. Cabinet à Bouillante, domicile ou visio France entière. Sans engagement.",
+    "Réserve ton appel découverte gratuit de 15 min avec Apolline. Cabinet à Bouillante, Guadeloupe, disponible aussi en visio partout en France. Répond sous 48h.",
   path: "/contact",
   keywords: [
     "appel découverte gratuit",

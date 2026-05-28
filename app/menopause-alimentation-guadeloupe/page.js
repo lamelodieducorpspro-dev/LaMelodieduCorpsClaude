@@ -3,8 +3,7 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title:
-    "Ménopause : alimentation & équilibre naturel",
+  title: "Ménopause & alimentation naturelle",
   description:
     "Nutrition pour la ménopause et périménopause. Bouffées de chaleur, prise de poids, fatigue, sommeil — approche naturelle à Bouillante, Guadeloupe et en visio.",
   path: "/menopause-alimentation-guadeloupe",

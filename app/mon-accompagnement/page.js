@@ -3,10 +3,9 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildBreadcrumb, SITE_BASE_URL } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title:
-    "Accompagnement Santé Féminine & Nutrition",
+  title: "Accompagnement santé féminine",
   description:
-    "Accompagnement personnalisé en nutrition et santé hormonale féminine : bilan, suivi, cabinet à Bouillante, Guadeloupe ou visio France entière.",
+    "Accompagnement personnalisé en nutrition et santé hormonale féminine : bilan complet, suivi individuel, SOPK, endométriose, ménopause. Cabinet à Bouillante, Guadeloupe ou visio France entière.",
   path: "/mon-accompagnement",
   keywords: [
     "accompagnement santé féminine",

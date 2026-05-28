@@ -3,9 +3,9 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Tarifs — Nutrition & Santé Féminine, Guadeloupe",
+  title: "Tarifs — santé féminine Guadeloupe",
   description:
-    "Appel découverte gratuit · Bilan 90€ · Suivi 50€/h. Cabinet Bouillante, domicile Côte-sous-le-Vent ou visio. Certaines mutuelles remboursent partiellement.",
+    "Appel découverte gratuit · Bilan initial 90€ · Séance de suivi 50€. Consultations en cabinet à Bouillante, Guadeloupe, à domicile ou en visioconférence partout en France.",
   path: "/tarifs",
   keywords: [
     "tarif nutritionniste Guadeloupe",
