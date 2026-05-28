@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Star, ArrowRight, Sparkles, Heart, Moon, Brain, Eye, Leaf, MapPin, Phone, Laptop } from "lucide-react";
 import { IMG, TESTIMONIALS, WHATSAPP_LINK, WHATSAPP_DISPLAY, ADDRESS, GOOGLE_REVIEWS, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEW_RATING } from "@/lib/constants";
 import ElfsightWidget from "@/components/site/ElfsightWidget";
+import HeroHeadline from "@/components/site/HeroHeadline";
 
 const symptoms = [
   "Ballonnements ou troubles digestifs fréquents",
@@ -80,11 +81,7 @@ export default function Home() {
             </div>
 
             <p className="overline mb-5">Praticienne en nutrition holistique · Guadeloupe</p>
-            <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-7xl text-forest leading-[1.05] mb-6">
-              Nutrition &amp;{" "}
-              <em className="text-terracotta">Santé hormonale</em>
-              {" "}féminine
-            </h1>
+            <HeroHeadline />
             <p className="text-lg text-[#4A5D54] max-w-xl mb-8 leading-relaxed">
               Tu souffres de SOPK, d'endométriose, de fatigue chronique ou de troubles du cycle ?
               J'accompagne les femmes à mieux comprendre leur corps et à retrouver équilibre,
@@ -169,7 +166,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {specialties.map((sp) => (
               <Link key={sp.tag} href={sp.to} data-testid={`specialty-card-${sp.tag.toLowerCase()}`}
-                className="group block bg-white rounded-[2rem] overflow-hidden border border-[#E2DCD0] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-all duration-500">
+                className="group block bg-white rounded-[2rem] overflow-hidden border border-[#E2DCD0] hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-all duration-500 od-reveal">
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <Image
                     src={sp.img}
@@ -183,8 +180,8 @@ export default function Home() {
                 </div>
                 <div className="p-8">
                   <p className="overline mb-3">{sp.tag}</p>
-                  <h3 className="font-serif text-2xl text-forest mb-3">{sp.title}</h3>
-                  <p className="text-sm text-[#4A5D54] leading-relaxed mb-5">{sp.desc}</p>
+                  <h3 className="font-serif text-2xl text-forest mb-3 font-medium">{sp.title}</h3>
+                  <p className="text-[0.9375rem] text-[#4A5D54] leading-relaxed mb-5">{sp.desc}</p>
                   <span className="inline-flex items-center gap-2 text-sm text-forest font-medium">
                     En savoir plus <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -217,8 +214,8 @@ export default function Home() {
                     <Icon className="w-4 h-4 text-terracotta" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl text-forest mb-1.5">{p.title}</h3>
-                    <p className="text-sm text-[#4A5D54] leading-relaxed">{p.desc}</p>
+                    <h3 className="font-serif text-xl text-forest mb-1.5 font-medium">{p.title}</h3>
+                    <p className="text-[0.9375rem] text-[#4A5D54] leading-relaxed">{p.desc}</p>
                   </div>
                 </div>
               );
@@ -237,7 +234,7 @@ export default function Home() {
           </div>
           <div className="space-y-5">
             {steps.map((s) => (
-              <div key={s.num} className="grid md:grid-cols-12 gap-6 bg-white rounded-[2rem] p-8 md:p-12 border border-[#E2DCD0]">
+              <div key={s.num} className="grid md:grid-cols-12 gap-6 bg-white rounded-[2rem] p-8 md:p-12 border border-[#E2DCD0] od-reveal">
                 <div className="md:col-span-2">
                   <span className="font-serif text-6xl text-terracotta">{s.num}</span>
                 </div>
@@ -271,7 +268,7 @@ export default function Home() {
               quality={85}
               loading="lazy"
               sizes="(max-width: 768px) 100vw, 40vw"
-              className="w-full rounded-[2rem] object-cover"
+              className="w-full rounded-[2rem] object-cover od-reveal-img"
             />
           </div>
           <div className="md:col-span-7">

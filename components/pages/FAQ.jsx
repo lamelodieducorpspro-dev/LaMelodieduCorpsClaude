@@ -13,7 +13,7 @@ export default function FAQ() {
       <section className="pt-32 pb-16 md:pt-44">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="overline mb-5">FAQ</p>
-          <h1 className="font-serif text-5xl md:text-7xl text-forest leading-[1.1] mb-6">
+          <h1 className="font-serif text-5xl md:text-7xl text-forest leading-[1.1] tracking-tight mb-6">
             Questions fréquentes sur la Nutrition, le <em className="text-terracotta">SOPK</em> et l&apos;Endométriose
           </h1>
           <p className="text-lg text-[#4A5D54] leading-relaxed">
@@ -46,7 +46,7 @@ export default function FAQ() {
                         }
                       </button>
                       {/* Toujours rendu dans le DOM → indexable par Google. CSS masque visuellement. */}
-                      <div className={isOpen ? "px-6 pb-6 text-sm text-[#4A5D54] leading-relaxed" : "hidden"}>
+                      <div className={isOpen ? "px-6 pb-6 text-[0.9375rem] text-[#4A5D54] leading-relaxed" : "hidden"}>
                         {item.a}
                       </div>
                     </div>

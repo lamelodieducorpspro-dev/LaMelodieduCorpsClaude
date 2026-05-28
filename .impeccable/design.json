@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "project": "La Mélodie du Corps",
+    "practitioner": "Apolline Maysounabe",
+    "register": "brand",
+    "north_star": "Le Soin Rituel",
+    "component_philosophy": "Doux et confiant",
+    "generated": "2026-05-28"
+  },
+  "colors": {
+    "forest":       "#2C4A3B",
+    "forest_dark":  "#1F3429",
+    "forest_text":  "#1A2421",
+    "sage":         "#849974",
+    "terracotta":   "#C38D75",
+    "sand":         "#D5C8B5",
+    "cream":        "#F9F6F0",
+    "cream_alt":    "#F3EFE6",
+    "text_muted":   "#4A5D54",
+    "warm_tint":    "#FAF0E9",
+    "sage_tint":    "#EDF3EF",
+    "note_bg":      "#FAF4EF",
+    "note_border":  "#DFC5B4"
+  },
+  "typography": {
+    "fonts": {
+      "display": "Cormorant Garamond",
+      "body": "Manrope"
+    },
+    "scale": {
+      "hero_h1":    "clamp(2.5rem, 5vw, 4.5rem)",
+      "page_h1":    "text-4xl md:text-6xl",
+      "section_h2": "text-3xl md:text-4xl",
+      "card_h3_lg": "text-2xl",
+      "card_h3_sm": "text-xl",
+      "intro":      "text-lg",
+      "body":       "text-[0.9375rem]",
+      "small":      "text-sm",
+      "overline":   "0.75rem uppercase tracking-[0.28em] font-medium text-sage"
+    },
+    "leading": {
+      "display":  "1.05",
+      "heading":  "1.1",
+      "body":     "1.7",
+      "relaxed":  "leading-relaxed"
+    }
+  },
+  "radii": {
+    "icon":    "0.75rem",
+    "card":    "1rem",
+    "card_lg": "2rem",
+    "button":  "9999px"
+  },
+  "shadows": {
+    "card_hover": "0 20px 60px rgba(0,0,0,0.08)",
+    "btn_glow":   "0 12px 30px rgba(44,74,59,0.25)"
+  },
+  "motion": {
+    "duration": "250ms",
+    "easing": "ease",
+    "spring": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "hover_lift": "translateY(-2px)"
+  },
+  "components": {
+    "btn_primary": "inline-flex items-center justify-center gap-2 px-8 py-[0.95rem] bg-forest text-white rounded-full font-medium text-[0.95rem] tracking-[0.02em] border border-forest transition-[background,transform,box-shadow] duration-250 ease hover:bg-forest-dark hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(44,74,59,0.25)]",
+    "btn_secondary": "inline-flex items-center justify-center gap-2 px-8 py-[0.95rem] bg-transparent text-forest rounded-full font-medium text-[0.95rem] tracking-[0.02em] border border-forest transition-all duration-250 ease hover:bg-forest hover:text-white hover:-translate-y-0.5",
+    "card_standard": "bg-white rounded-2xl border border-[#E2DCD0] p-6",
+    "card_large": "rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)]",
+    "icon_terracotta": "w-11 h-11 rounded-2xl bg-[#FAF0E9] flex items-center justify-center flex-shrink-0",
+    "icon_sage": "w-9 h-9 rounded-xl bg-[#EDF3EF] flex items-center justify-center flex-shrink-0",
+    "callout": "bg-[#FAF4EF] border border-[#DFC5B4] rounded-2xl px-7 py-5",
+    "overline": "text-[0.75rem] uppercase tracking-[0.28em] font-medium text-sage"
+  },
+  "narrative": {
+    "tone": "Professionnel mais doux, expert mais humain.",
+    "touch": "Chaque détail a une intention — comme une consultation avec Apolline.",
+    "anti_references": [
+      "SaaS HeroMetric grids",
+      "glassmorphism",
+      "gradient text",
+      "side-stripe borders",
+      "em dashes in copy",
+      "pure black or white",
+      "identical card grids"
+    ]
+  }
+}

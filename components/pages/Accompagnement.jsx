@@ -29,7 +29,7 @@ export default function Accompagnement() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <p className="overline mb-5">Mon accompagnement</p>
-            <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] mb-6">
+            <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] tracking-tight mb-6">
               Accompagnement en <em className="text-terracotta">Nutrition</em> et <em className="text-terracotta">Santé hormonale féminine</em> à Bouillante
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed mb-6">
@@ -90,8 +90,8 @@ export default function Accompagnement() {
                   <div className="w-12 h-12 rounded-full bg-cream-2 flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5 text-terracotta" />
                   </div>
-                  <h3 className="font-serif text-2xl text-forest mb-2">{l.t}</h3>
-                  <p className="text-sm text-[#4A5D54] leading-relaxed">{l.d}</p>
+                  <h3 className="font-serif text-2xl text-forest mb-2 font-medium">{l.t}</h3>
+                  <p className="text-[0.9375rem] text-[#4A5D54] leading-relaxed">{l.d}</p>
                 </div>
               );
             })}

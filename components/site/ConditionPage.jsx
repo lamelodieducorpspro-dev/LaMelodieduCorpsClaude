@@ -35,7 +35,7 @@ export default function ConditionPage({
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <p className="overline mb-5">{overline}</p>
-            <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] mb-6">
+            <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] tracking-tight mb-6">
               {h1}
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed mb-8">{intro}</p>
@@ -78,7 +78,7 @@ export default function ConditionPage({
       {/* ── SYMPTÔMES ─────────────────────────────────────── */}
       <section className="py-20 bg-cream-2">
         <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="font-serif text-3xl md:text-4xl text-forest mb-3">
+          <h2 className="font-serif text-3xl md:text-4xl text-forest mb-3 od-reveal">
             {symptomsTitle}
           </h2>
           {symptomsLead && (
@@ -98,8 +98,8 @@ export default function ConditionPage({
                     <Icon className="w-5 h-5 text-terracotta" />
                   </div>
                   <div>
-                    <p className="font-serif text-lg text-forest mb-2">{s.label}</p>
-                    <p className="text-sm text-[#4A5D54] leading-relaxed">{s.desc}</p>
+                    <p className="font-serif text-lg text-forest mb-2 font-medium">{s.label}</p>
+                    <p className="text-[0.9375rem] text-[#4A5D54] leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               );
@@ -122,7 +122,7 @@ export default function ConditionPage({
           >
             "
           </div>
-          <blockquote className="font-serif text-2xl md:text-3xl text-white leading-relaxed">
+          <blockquote className="font-serif text-2xl md:text-3xl text-white leading-[1.75]">
             {quote}
           </blockquote>
           <div className="mt-8 w-12 h-px bg-sand/40 mx-auto" />
@@ -157,7 +157,7 @@ export default function ConditionPage({
                       </div>
                       <div>
                         <p className="font-medium text-forest text-sm mb-1">{l.title}</p>
-                        <p className="text-xs text-[#4A5D54] leading-relaxed">{l.desc}</p>
+                        <p className="text-sm text-[#4A5D54] leading-relaxed">{l.desc}</p>
                       </div>
                     </div>
                   );
@@ -171,12 +171,12 @@ export default function ConditionPage({
       {/* ── CE QU'ON TRAVAILLE ───────────────────────────── */}
       <section className="py-20 bg-cream-2">
         <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="font-serif text-3xl md:text-4xl text-forest mb-10">{workTitle}</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-forest mb-10 od-reveal">{workTitle}</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {workItems.map((item, i) => (
               <div
                 key={i}
-                className="relative bg-white rounded-2xl p-6 border border-[#E2DCD0] overflow-hidden"
+                className="relative bg-white rounded-2xl p-6 border border-[#E2DCD0] overflow-hidden od-reveal"
               >
                 {/* Watermark number */}
                 <div

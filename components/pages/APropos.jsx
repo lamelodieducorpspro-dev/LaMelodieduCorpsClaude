@@ -10,7 +10,7 @@ export default function APropos() {
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <p className="overline mb-5">À propos</p>
-            <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] mb-6">
+            <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] tracking-tight mb-6">
               <em className="text-terracotta">Apolline Maysounabe</em> — Praticienne en Nutrition et Santé féminine à Bouillante, Guadeloupe
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed">
@@ -66,17 +66,20 @@ export default function APropos() {
                     <Icon className="w-4 h-4 text-terracotta" />
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl text-forest mb-1.5">{c.t}</h3>
-                    <p className="text-sm text-[#4A5D54] leading-relaxed">{c.d}</p>
+                    <h3 className="font-serif text-xl text-forest mb-1.5 font-medium">{c.t}</h3>
+                    <p className="text-[0.9375rem] text-[#4A5D54] leading-relaxed">{c.d}</p>
                   </div>
                 </div>
               );
             })}
           </div>
-          <p className="mt-8 text-sm italic text-[#4A5D54] max-w-3xl">
-            Note de transparence : je suis praticienne en nutrition santé holistique — je ne suis pas diététicienne-nutritionniste
-            au sens légal du terme (diplôme d'État). Mon approche est préventive et complémentaire au suivi médical.
-          </p>
+          <div className="mt-10 bg-[#FAF4EF] border border-[#DFC5B4] rounded-2xl px-7 py-5">
+            <p className="overline mb-2">Transparence</p>
+            <p className="text-[0.9375rem] text-[#4A5D54] leading-relaxed">
+              Je suis praticienne en nutrition santé holistique, non diététicienne-nutritionniste au sens légal du terme (diplôme d'État).
+              Mon approche est préventive et complémentaire au suivi médical.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -91,8 +94,8 @@ export default function APropos() {
               { t: "La présence et l'écoute", d: "Chaque personne que j'accompagne a une histoire unique. Je prends le temps de vraiment comprendre la tienne avant de proposer quoi que ce soit." },
             ].map((v) => (
               <div key={v.t}>
-                <h3 className="font-serif text-2xl text-forest mb-3">{v.t}</h3>
-                <p className="text-sm text-[#4A5D54] leading-relaxed max-w-prose">{v.d}</p>
+                <h3 className="font-serif text-2xl text-forest mb-3 font-medium">{v.t}</h3>
+                <p className="text-[0.9375rem] text-[#4A5D54] leading-relaxed max-w-prose">{v.d}</p>
               </div>
             ))}
           </div>

@@ -27,6 +27,10 @@ const redirects = async () => [
   { source: "/contact-fr", destination: "/contact", permanent: true },
 ];
 
+// Dev-only allowance so impeccable live mode can load.
+const __impeccableLiveDev =
+  process.env.NODE_ENV === "development" ? " http://localhost:8400" : "";
+
 // Sources externes connues du site :
 // - Elfsight : widget Google Reviews (scripts + assets)
 // - next/font/google auto-héberge les polices → pas besoin de fonts.googleapis.com
@@ -45,7 +49,7 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       // Next.js inline scripts + Elfsight (platform.js + widgets)
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://static.elfsight.com https://core.service.elfsight.com",
+      `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://static.elfsight.com https://core.service.elfsight.com${__impeccableLiveDev}`,
       // Tailwind inline styles + polices auto-hébergées
       "style-src 'self' 'unsafe-inline'",
       // Polices auto-hébergées via next/font
@@ -53,7 +57,7 @@ const securityHeaders = [
       // Images locales + avatars Google + data URIs
       "img-src 'self' data: blob: https://lh3.googleusercontent.com https://elfsightcdn.com https://static.elfsight.com",
       // API interne + appels Elfsight
-      "connect-src 'self' https://service.elfsight.com https://core.service.elfsight.com https://elfsightcdn.com",
+      `connect-src 'self' https://service.elfsight.com https://core.service.elfsight.com https://elfsightcdn.com${__impeccableLiveDev}`,
       // Iframes Elfsight widget si nécessaire
       "frame-src https://elfsightcdn.com https://static.elfsight.com",
       // Restreint l'iframe aux origines connues : domaine propre + previews Vercel
