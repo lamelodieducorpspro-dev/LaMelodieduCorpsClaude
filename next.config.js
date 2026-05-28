@@ -56,8 +56,8 @@ const securityHeaders = [
       "connect-src 'self' https://service.elfsight.com https://core.service.elfsight.com https://elfsightcdn.com",
       // Iframes Elfsight widget si nécessaire
       "frame-src https://elfsightcdn.com https://static.elfsight.com",
-      // Permet l'intégration dans l'iframe Emergent (preview)
-      "frame-ancestors *",
+      // Restreint l'iframe aux origines connues : domaine propre + previews Vercel
+      "frame-ancestors 'self' https://*.vercel.app",
     ].join("; "),
   },
 ];

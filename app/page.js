@@ -1,6 +1,5 @@
 import Home from "@/components/pages/Home";
-import StructuredData from "@/components/site/StructuredData";
-import { buildMetadata, personJsonLd } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title:
@@ -23,10 +22,5 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
-  return (
-    <>
-      <StructuredData id="jsonld-person" data={personJsonLd} />
-      <Home />
-    </>
-  );
+  return <Home />;
 }

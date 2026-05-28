@@ -16,9 +16,9 @@ const ALL_PROD_HOSTS = new Set([
   "www.lamelodieducorps.com",
 ]);
 
-// Accent-stripped redirects (kept as a map for clarity).
-// We compare the *decoded* pathname so both raw and percent-encoded
-// forms (e.g. "/%C3%A0-propos") are caught.
+// Accent-stripped redirects for percent-encoded URLs (e.g. /%C3%A0-propos).
+// next.config.js redirects handle the raw-accent form (/à-propos) at CDN level.
+// This middleware catches the percent-encoded variants that bypass those redirects.
 const ACCENT_REDIRECTS = {
   "/à-propos": "/a-propos",
   "/mentions-légales": "/mentions-legales",
