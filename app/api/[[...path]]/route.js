@@ -213,8 +213,7 @@ async function handleRoute(request, { params }) {
         };
         await db.collection("newsletter").insertOne({ ...entry });
       }
-      // Fire & forget email
-      sendEmail({
+      await sendEmail({
         to: body.email,
         subject: "Ton guide « Mon cycle, mon allié » 🌿",
         html: guideEmailHtml(),
@@ -247,20 +246,19 @@ async function handleRoute(request, { params }) {
       };
       await db.collection("contacts").insertOne({ ...entry });
 
-      // Notify Apolline
-      sendEmail({
-        to: NOTIFY_EMAIL,
-        subject: `Nouveau message de ${entry.name} · ${entry.subject}`,
-        html: contactNotificationHtml(entry),
-        replyTo: entry.email,
-      }).catch((e) => console.error("contact notify error", e));
-
-      // Confirm to client
-      sendEmail({
-        to: entry.email,
-        subject: "Ton message est bien arrivé 🌿",
-        html: contactConfirmationHtml(entry.name),
-      }).catch((e) => console.error("contact confirm error", e));
+      await Promise.all([
+        sendEmail({
+          to: NOTIFY_EMAIL,
+          subject: `Nouveau message de ${entry.name} · ${entry.subject}`,
+          html: contactNotificationHtml(entry),
+          replyTo: entry.email,
+        }).catch((e) => console.error("contact notify error", e)),
+        sendEmail({
+          to: entry.email,
+          subject: "Ton message est bien arrivé 🌿",
+          html: contactConfirmationHtml(entry.name),
+        }).catch((e) => console.error("contact confirm error", e)),
+      ]);
 
       return cors(NextResponse.json(entry));
     }
