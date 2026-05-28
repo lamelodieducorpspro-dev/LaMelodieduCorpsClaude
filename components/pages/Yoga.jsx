@@ -14,7 +14,7 @@ export default function Yoga() {
         <div className="max-w-5xl mx-auto px-6 md:px-10 text-center">
           <p className="overline mb-5">Yoga'Niti Studio · Bouillante, Guadeloupe</p>
           <h1 className="font-serif text-4xl md:text-7xl text-forest leading-[1.1] mb-6">
-            Cours de <em className="text-terracotta">Kundalini</em><br />& Yin Yoga<br />
+            Cours de <em className="text-terracotta">Kundalini</em><br />& <em className="text-terracotta">Yin</em> Yoga<br />
             <span className="text-3xl md:text-5xl">à Bouillante, Guadeloupe</span>
           </h1>
           <p className="text-lg text-[#4A5D54] leading-relaxed max-w-2xl mx-auto mb-8">
