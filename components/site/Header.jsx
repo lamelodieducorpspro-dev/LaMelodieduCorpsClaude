@@ -43,10 +43,11 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-20">
-        <Link href="/" data-testid="header-logo" className="flex items-center gap-3 min-w-0">
-          <Image src={IMG.logo} alt="La Mélodie du Corps" width={44} height={44} className="w-10 h-10 md:w-11 md:h-11 rounded-full object-cover flex-shrink-0" />
-          <span className="font-serif text-lg md:text-[1.35rem] leading-tight text-forest whitespace-nowrap md:whitespace-normal">
-            La Mélodie <span className="md:block">du Corps</span>
+        <Link href="/" data-testid="header-logo" className="flex items-center gap-2.5 flex-shrink-0">
+          <Image src={IMG.logo} alt="La Mélodie du Corps" width={44} height={44} className="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover flex-shrink-0" />
+          <span className="font-serif leading-[1.2] text-forest">
+            <span className="block text-base md:hidden">La Mélodie<br />du Corps</span>
+            <span className="hidden md:block text-[1.35rem]">La Mélodie <span className="block">du Corps</span></span>
           </span>
         </Link>
 
@@ -103,18 +104,19 @@ export default function Header() {
           )}
         </nav>
 
-        <Link href="/contact" data-testid="header-cta" className="hidden lg:inline-flex btn-primary !py-2.5 !px-5 !text-sm">
-          Prendre RDV
-        </Link>
-
-        <button
-          onClick={() => setOpen(!open)}
-          data-testid="mobile-menu-toggle"
-          className="lg:hidden p-2 text-forest"
-          aria-label="Menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <Link href="/contact" data-testid="header-cta" className="btn-primary !py-3.5 !px-7 !text-sm whitespace-nowrap">
+            Prendre RDV
+          </Link>
+          <button
+            onClick={() => setOpen(!open)}
+            data-testid="mobile-menu-toggle"
+            className="lg:hidden p-2 text-forest"
+            aria-label="Menu"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
