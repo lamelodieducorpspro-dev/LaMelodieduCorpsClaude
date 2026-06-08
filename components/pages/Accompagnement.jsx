@@ -4,7 +4,7 @@ import { ArrowRight, Check, MapPin, Car, Laptop, Sparkles, Heart, Moon, Brain, L
 import { IMG } from "@/lib/constants";
 
 const pourQui = [
-  "Souffre de SMOP, d'endométriose ou de troubles du cycle",
+  "Souffre de SMOP (anciennement SOPK), d'endométriose ou de troubles du cycle",
   "A un SPM marqué ou des règles douloureuses",
   "Traverse la ménopause ou la périménopause",
   "Ressent une fatigue chronique inexpliquée",

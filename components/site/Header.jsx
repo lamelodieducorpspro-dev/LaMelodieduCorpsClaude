@@ -12,7 +12,7 @@ const navItems = [
   {
     label: "Mes spécialités",
     children: [
-      { label: "SMOP", to: "/sopk-alimentation-guadeloupe" },
+      { label: "SMOP (SOPK)", to: "/sopk-alimentation-guadeloupe" },
       { label: "Endométriose", to: "/endometriose-alimentation-guadeloupe" },
       { label: "Ménopause", to: "/menopause-alimentation-guadeloupe" },
     ],

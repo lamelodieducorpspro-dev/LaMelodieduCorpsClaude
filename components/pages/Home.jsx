@@ -10,7 +10,7 @@ const symptoms = [
   "Fatigue persistante sans explication claire",
   "SPM marqué ou règles douloureuses",
   "Cycle irrégulier ou difficile à vivre",
-  "SMOP, endométriose ou troubles gynécologiques",
+  "SMOP (anciennement SOPK), endométriose ou troubles gynécologiques",
   "Stress chronique, charge mentale, sommeil perturbé",
   "Préménopause ou ménopause inconfortable",
   "Sensation que ton corps est déséquilibré",
@@ -26,7 +26,7 @@ const pillars = [
 ];
 
 const specialties = [
-  { tag: "SMOP", title: "SMOP", img: IMG.sopk, to: "/sopk-alimentation-guadeloupe",
+  { tag: "SMOP (SOPK)", title: "SMOP (SOPK)", img: IMG.sopk, to: "/sopk-alimentation-guadeloupe",
     desc: "Cycles irréguliers, fatigue, fringales, acné, prise de poids... L'alimentation est l'un des leviers les plus puissants pour soutenir ton équilibre hormonal naturellement." },
   { tag: "Endométriose", title: "Endométriose", img: IMG.endo, to: "/endometriose-alimentation-guadeloupe",
     desc: "Douleurs chroniques, inflammation, troubles digestifs, fatigue profonde... Une approche holistique peut considérablement améliorer ton confort au quotidien." },

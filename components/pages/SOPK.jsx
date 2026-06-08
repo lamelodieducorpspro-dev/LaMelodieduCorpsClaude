@@ -22,7 +22,7 @@ export default function SOPK() {
       h1="SMOP (anciennement SOPK) et Alimentation : soutenir son équilibre hormonal naturellement"
       heroImg={IMG.sopk}
       heroAlt="SMOP et alimentation : accompagnement nutritionnel par Apolline à Bouillante, Guadeloupe"
-      intro="Le SOPK (Syndrome des Ovaires Polykystiques) est aujourd'hui renommé SMOP. Cette page utilise désormais cette nouvelle nomenclature. Cycles irréguliers, fatigue persistante, acné hormonale, fringales intenses… Le SMOP impacte bien plus que le seul cycle menstruel. L'alimentation est l'un des leviers les plus puissants pour retrouver plus de confort et de stabilité — sans régime, sans liste d'interdits."
+      intro="Le SOPK (Syndrome des Ovaires Polykystiques) a été officiellement renommé SMOP (Syndrome Métabolique Ovarien Polyendocrinien) en mai 2026. Cette page adopte progressivement cette nouvelle nomenclature. Cycles irréguliers, fatigue persistante, acné hormonale, fringales intenses… Le SMOP impacte bien plus que le seul cycle menstruel. L'alimentation est l'un des leviers les plus puissants pour retrouver plus de confort et de stabilité — sans régime, sans liste d'interdits."
       symptomsTitle="Ce que tu vis peut-être"
       symptomsLead="Le SMOP se manifeste différemment d'une femme à l'autre. Ces symptômes sont réels — et ils méritent une attention concrète, pas des explications vagues."
       symptoms={[

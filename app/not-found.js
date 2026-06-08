@@ -52,7 +52,7 @@ export default function NotFound() {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-left">
           {[
             { href: "/mon-accompagnement", label: "Mon accompagnement" },
-            { href: "/sopk-alimentation-guadeloupe", label: "SMOP" },
+            { href: "/sopk-alimentation-guadeloupe", label: "SMOP (SOPK)" },
             { href: "/endometriose-alimentation-guadeloupe", label: "Endométriose" },
             { href: "/menopause-alimentation-guadeloupe", label: "Ménopause" },
             { href: "/cours-yoga-bouillante-guadeloupe", label: "Cours de yoga" },

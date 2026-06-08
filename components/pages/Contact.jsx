@@ -193,7 +193,7 @@ export default function Contact() {
                       <select value={form.subject} onChange={handle("subject")} data-testid="contact-subject"
                         className="w-full px-4 py-3 rounded-2xl border border-[#E2DCD0] bg-cream-2/40 appearance-none focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/15 transition-colors">
                         <option>Appel découverte gratuit</option>
-                        <option>SMOP / Endométriose / Ménopause</option>
+                        <option>SMOP (anciennement SOPK) / Endométriose / Ménopause</option>
                         <option>Cours de yoga</option>
                         <option>Autre demande</option>
                       </select>

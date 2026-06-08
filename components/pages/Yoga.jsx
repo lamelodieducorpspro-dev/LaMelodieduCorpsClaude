@@ -95,7 +95,7 @@ export default function Yoga() {
               "Tu veux commencer le yoga dans un cadre bienveillant et non compétitif",
               "Tu cherches à évacuer le stress de la semaine",
               "Tu souffres de tensions chroniques (dos, hanches, épaules)",
-              "Tu traverses un déséquilibre hormonal (SMOP, ménopause)",
+              "Tu traverses un déséquilibre hormonal (SMOP / SOPK, ménopause)",
               "Tu veux prendre soin de toi sans performance ni pression",
               "Tu veux combiner yoga et nutrition pour une approche globale",
             ].map((b, i) => (
