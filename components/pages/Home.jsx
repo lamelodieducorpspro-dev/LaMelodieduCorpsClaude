@@ -37,7 +37,7 @@ const specialties = [
 const steps = [
   { num: "01", title: "Appel découverte", price: "Gratuit · 15 min", desc: "On fait connaissance. Tu me parles de ta situation, je t'explique comment je peux t'aider. Aucune pression." },
   { num: "02", title: "Séance bilan", price: "2h · 90€ cabinet/visio · 100€ domicile", desc: "Un bilan approfondi sur ta santé globale : alimentation, cycle, énergie, sommeil, stress, digestion." },
-  { num: "03", title: "Séances de suivi", price: "1h · 50€ cabinet/visio · 60€ domicile", desc: "Minimum 4 séances sur 3 à 4 mois. On ajuste, on approfondit, on avance à ton rythme." },
+  { num: "03", title: "Séances de suivi", price: "1h · 50€ cabinet/visio · 60€ domicile", desc: "Minimum 3 séances sur 3 à 4 mois. On ajuste, on approfondit, on avance à ton rythme." },
 ];
 
 export default function Home() {

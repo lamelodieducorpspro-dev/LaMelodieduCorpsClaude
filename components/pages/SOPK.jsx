@@ -18,13 +18,13 @@ import { IMG } from "@/lib/constants";
 export default function SOPK() {
   return (
     <ConditionPage
-      overline="Santé hormonale féminine · SOPK"
-      h1="SOPK et Alimentation : soutenir son équilibre hormonal naturellement"
+      overline="Santé hormonale féminine · SMOP"
+      h1="SMOP (anciennement SOPK) et Alimentation : soutenir son équilibre hormonal naturellement"
       heroImg={IMG.sopk}
-      heroAlt="SOPK et alimentation : accompagnement nutritionnel par Apolline à Bouillante, Guadeloupe"
-      intro="Cycles irréguliers, fatigue persistante, acné hormonale, fringales intenses… Le SOPK impacte bien plus que le seul cycle menstruel. L'alimentation est l'un des leviers les plus puissants pour retrouver plus de confort et de stabilité — sans régime, sans liste d'interdits."
+      heroAlt="SMOP et alimentation : accompagnement nutritionnel par Apolline à Bouillante, Guadeloupe"
+      intro="Le SOPK (Syndrome des Ovaires Polykystiques) est aujourd'hui renommé SMOP. Cette page utilise désormais cette nouvelle nomenclature. Cycles irréguliers, fatigue persistante, acné hormonale, fringales intenses… Le SMOP impacte bien plus que le seul cycle menstruel. L'alimentation est l'un des leviers les plus puissants pour retrouver plus de confort et de stabilité — sans régime, sans liste d'interdits."
       symptomsTitle="Ce que tu vis peut-être"
-      symptomsLead="Le SOPK se manifeste différemment d'une femme à l'autre. Ces symptômes sont réels — et ils méritent une attention concrète, pas des explications vagues."
+      symptomsLead="Le SMOP se manifeste différemment d'une femme à l'autre. Ces symptômes sont réels — et ils méritent une attention concrète, pas des explications vagues."
       symptoms={[
         {
           icon: Zap,
@@ -61,7 +61,7 @@ export default function SOPK() {
       quote="Le SOPK n'est pas une condamnation. C'est un message de ton corps qui demande plus d'attention, pas moins."
       mechanismTitle="Comment l'alimentation peut soutenir ton équilibre"
       mechanismParagraphs={[
-        "L'alimentation ne guérit pas le SOPK. Mais elle peut agir sur plusieurs mécanismes qui influencent directement tes symptômes.",
+        "L'alimentation ne guérit pas le SMOP. Mais elle peut agir sur plusieurs mécanismes qui influencent directement tes symptômes.",
         "La résistance à l'insuline est présente chez 50 à 70 % des femmes avec un SOPK — et elle amplifie le déséquilibre hormonal. Stabiliser la glycémie est souvent le premier levier concret.",
         "L'objectif n'est pas un régime strict ou une liste d'aliments à bannir. C'est de comprendre ce dont ton corps a besoin pour retrouver plus d'équilibre — et de le mettre en place sans pression.",
       ]}
@@ -69,7 +69,7 @@ export default function SOPK() {
         {
           icon: TrendingDown,
           title: "Glycémie & insuline",
-          desc: "Composer les repas pour réduire les pics d'insuline, premier perturbateur hormonal dans le SOPK.",
+          desc: "Composer les repas pour réduire les pics d'insuline, premier perturbateur hormonal dans le SMOP.",
         },
         {
           icon: Flame,
@@ -134,12 +134,12 @@ export default function SOPK() {
       ]}
       faq={[
         {
-          q: "L'alimentation peut-elle vraiment changer les choses avec le SOPK ?",
-          a: "Elle ne guérit pas le SOPK, mais elle peut soutenir l'équilibre hormonal, réduire l'inflammation et améliorer le confort au quotidien. Beaucoup de femmes constatent des améliorations sur la fatigue, les fringales et la régularité du cycle après quelques semaines.",
+          q: "L'alimentation peut-elle vraiment changer les choses avec le SMOP ?",
+          a: "Oui, l'alimentation est un levier essentiel, elle aide à soutenir l'équilibre hormonal, réduire l'inflammation et améliorer le confort au quotidien. Beaucoup de femmes constatent des améliorations sur la fatigue, les fringales et la régularité du cycle après quelques semaines.",
         },
         {
           q: "Faut-il arrêter le gluten ou les produits laitiers ?",
-          a: "Pas forcément. Ces questions se traitent au cas par cas selon ta situation et tes symptômes. Il n'existe pas de liste universelle d'aliments à supprimer avec le SOPK — tout dépend de ton terrain.",
+          a: "Tout dépend de ton terrain de base, ces questions se traitent au cas par cas selon ta situation et tes symptômes. Malgré tout, je vois souvent les symptômes des femmes soulagés lorsqu'on réduit ces produits. Dans mon approche, je ne bannis rien, mais quand c'est nécessaire on vient limiter ces aliments.",
         },
         {
           q: "Cet accompagnement remplace-t-il mon suivi gynécologique ?",
@@ -151,7 +151,7 @@ export default function SOPK() {
         },
         {
           q: "Combien de temps avant de voir des résultats ?",
-          a: "Chaque femme est différente. On observe souvent des premières améliorations sur l'énergie et les fringales après 4 à 6 semaines. L'accompagnement dure 3 à 4 mois pour ancrer vraiment les changements.",
+          a: "Chaque femme est différente. Cependant, on observe souvent des premières améliorations après entre la première et deuxième séance notamment concernant l'énergie et les fringales. C'est pourquoi je propose un accompagnement sur plusieurs séances, pour vraiment ancrer les changements et faire en sorte que les bénéfices restent après l'accompagnement.",
         },
       ]}
       ctaTitle="Prête à prendre soin de ton équilibre hormonal ?"

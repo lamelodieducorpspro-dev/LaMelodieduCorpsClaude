@@ -60,7 +60,7 @@ export default function Endometriose() {
       quote="Vivre avec l'endométriose ne veut pas dire se battre contre son corps. Ça peut aussi être apprendre à l'écouter autrement."
       mechanismTitle="Quel est le lien entre alimentation et endométriose ?"
       mechanismParagraphs={[
-        "L'alimentation ne guérit pas l'endométriose. Mais elle peut soutenir certains terrains qui influencent directement ton confort au quotidien.",
+        "L'alimentation soutient ton corps et influence directement ton confort au quotidien.",
         "L'endométriose est une maladie inflammatoire chronique. Agir sur l'inflammation via l'alimentation n'est pas accessoire — c'est l'un des leviers les plus concrets disponibles en dehors du traitement médical.",
         "L'approche est individualisée : ce qui aide une femme peut ne pas aider une autre. On part de ta situation, de tes symptômes réels — pas d'un protocole universel.",
       ]}
@@ -134,7 +134,7 @@ export default function Endometriose() {
       faq={[
         {
           q: "Dois-je manger sans gluten avec l'endométriose ?",
-          a: "Certaines femmes constatent un mieux-être en réduisant le gluten, d'autres non. Cela se travaille au cas par cas selon tes symptômes digestifs et tes sensibilités. Pas de règle universelle — on part de ta situation.",
+          a: "La plupart des femmes constatent un mieux-être en réduisant le gluten, oui c'est vrai, mais cela se travaille au cas par cas selon tes symptômes digestifs et tes sensibilités. Pas de règle universelle — on part de ta situation.",
         },
         {
           q: "L'alimentation anti-inflammatoire, c'est compliqué à mettre en place ?",
@@ -150,7 +150,7 @@ export default function Endometriose() {
         },
         {
           q: "Est-ce que ça peut vraiment m'aider si j'ai une forme sévère ?",
-          a: "L'alimentation peut apporter un soutien complémentaire quelle que soit la sévérité de l'endométriose. Elle ne remplace pas le traitement médical, mais elle peut améliorer le confort de vie au quotidien — même dans les formes avancées.",
+          a: "Oui, l'alimentation apporte un soutien complémentaire quelle que soit la sévérité de l'endométriose. Elle peut améliorer le confort de vie au quotidien — même dans les formes avancées.",
         },
       ]}
       ctaTitle="Envie de prendre soin de ton corps avec plus de douceur ?"

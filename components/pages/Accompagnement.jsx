@@ -25,9 +25,9 @@ const leviers = [
 export default function Accompagnement() {
   return (
     <>
-      <section className="pt-32 pb-16 md:pt-44 md:pb-24">
+      <section className="pt-4 pb-16 md:pt-44 md:pb-24">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 order-2 lg:order-1">
             <p className="overline mb-5">Mon accompagnement</p>
             <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] tracking-tight mb-6">
               Accompagnement en <em className="text-terracotta">Nutrition</em> et <em className="text-terracotta">Santé hormonale féminine</em> à Bouillante
@@ -45,7 +45,7 @@ export default function Accompagnement() {
               Réserver mon appel découverte gratuit <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 order-1 lg:order-2">
             <Image src={IMG.life1} alt="" width={560} height={560} className="w-full rounded-[2rem] object-cover" />
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function Accompagnement() {
               { n: "02", t: "La séance bilan", p: "2h · 90€ cabinet/visio · 100€ domicile",
                 d: "Un bilan approfondi : histoire de santé, alimentation, cycle, énergie, sommeil, stress, digestion, objectifs. Repars avec un plan d'action personnalisé." },
               { n: "03", t: "Les séances de suivi", p: "1h · 50€ cabinet/visio · 60€ domicile",
-                d: "Minimum 4 séances sur 3 à 4 mois. On ajuste, on approfondit, on consolide. Disponibilité par message entre les séances." },
+                d: "Minimum 3 séances sur 3 à 4 mois. On ajuste, on approfondit, on consolide. Disponibilité par message entre les séances." },
             ].map((s) => (
               <div key={s.n} className="grid md:grid-cols-12 gap-6 bg-cream-2 rounded-[2rem] p-8 md:p-12">
                 <div className="md:col-span-2 font-serif text-6xl text-terracotta">{s.n}</div>

@@ -3,11 +3,12 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SOPK & alimentation hormonale",
+  title: "SMOP (anciennement SOPK) & alimentation hormonale",
   description:
-    "Mieux vivre le SOPK par l'alimentation : cycle irrégulier, fatigue, glycémie, inflammation. Accompagnement naturel à Bouillante, Guadeloupe et en visio.",
+    "Mieux vivre le SMOP par l'alimentation : cycle irrégulier, fatigue, glycémie, inflammation. Le SMOP — anciennement SOPK — se gère efficacement grâce à la nutrition holistique. Accompagnement naturel à Bouillante, Guadeloupe et en visio.",
   path: "/sopk-alimentation-guadeloupe",
   keywords: [
+    "SMOP",
     "SOPK",
     "alimentation",
     "équilibre hormonal",
@@ -23,12 +24,12 @@ export const metadata = buildMetadata({
 
 const faqItems = [
   {
-    q: "L'alimentation peut-elle vraiment changer les choses avec le SOPK ?",
-    a: "Elle ne guérit pas le SOPK, mais elle peut soutenir l'équilibre hormonal, réduire l'inflammation et améliorer le confort au quotidien. Beaucoup de femmes constatent des améliorations sur la fatigue, les fringales et la régularité du cycle.",
+    q: "L'alimentation peut-elle vraiment changer les choses avec le SMOP ?",
+    a: "Elle ne guérit pas le SMOP, mais elle peut soutenir l'équilibre hormonal, réduire l'inflammation et améliorer le confort au quotidien. Beaucoup de femmes constatent des améliorations sur la fatigue, les fringales et la régularité du cycle.",
   },
   {
     q: "Faut-il arrêter le gluten ou les produits laitiers ?",
-    a: "Pas forcément. Ces questions se traitent au cas par cas selon ta situation. Il n'existe pas de liste universelle d'aliments à supprimer avec le SOPK.",
+    a: "Pas forcément. Ces questions se traitent au cas par cas selon ta situation. Il n'existe pas de liste universelle d'aliments à supprimer avec le SMOP.",
   },
   {
     q: "Cet accompagnement remplace-t-il mon suivi gynécologique ?",
@@ -48,7 +49,7 @@ export default function Page() {
         id="jsonld-bc-sopk"
         data={buildBreadcrumb([
           { name: "Accueil", path: "/" },
-          { name: "SOPK", path: "/sopk-alimentation-guadeloupe" },
+          { name: "SMOP", path: "/sopk-alimentation-guadeloupe" },
         ])}
       />
       <SOPK />

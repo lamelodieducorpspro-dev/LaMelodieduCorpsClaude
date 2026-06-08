@@ -31,9 +31,9 @@ export default function ConditionPage({
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="pt-32 pb-16 md:pt-44 md:pb-24" data-testid="condition-hero">
+      <section className="pt-4 pb-16 md:pt-44 md:pb-24" data-testid="condition-hero">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 order-2 lg:order-1">
             <p className="overline mb-5">{overline}</p>
             <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] tracking-tight mb-6">
               {h1}
@@ -59,8 +59,8 @@ export default function ConditionPage({
               </span>
             </div>
           </div>
-          <div className="lg:col-span-5">
-            <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+          <div className="lg:col-span-5 order-1 lg:order-2">
+            <div className="relative aspect-[3/2] md:aspect-square w-full overflow-hidden rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
               <Image
                 src={heroImg}
                 alt={heroAlt}
@@ -220,7 +220,7 @@ export default function ConditionPage({
               {
                 title: "Séances de suivi",
                 price: "1h · 50€ cabinet/visio",
-                desc: "Minimum 4 séances sur 3 à 4 mois pour vraiment ancrer les changements. On ajuste ensemble au fil du temps.",
+                desc: "Minimum 3 séances sur 3 à 4 mois pour vraiment ancrer les changements. On ajuste ensemble au fil du temps.",
               },
             ].map((s, i) => (
               <div

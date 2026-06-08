@@ -6,9 +6,9 @@ import { IMG, TESTIMONIALS } from "@/lib/constants";
 export default function APropos() {
   return (
     <>
-      <section className="pt-32 pb-20 md:pt-44">
+      <section className="pt-4 pb-20 md:pt-44">
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 order-2 lg:order-1">
             <p className="overline mb-5">À propos</p>
             <h1 className="font-serif text-4xl md:text-6xl text-forest leading-[1.1] tracking-tight mb-6">
               <em className="text-terracotta">Apolline Maysounabe</em> — Praticienne en Nutrition et Santé féminine à Bouillante, Guadeloupe
@@ -18,7 +18,7 @@ export default function APropos() {
               Certification Hygie Pro · Kundalini Yoga · Yin Yoga.
             </p>
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 order-1 lg:order-2">
             <Image src={IMG.about} alt="Apolline Maysounabe, praticienne en nutrition holistique à Bouillante Guadeloupe" width={560} height={700} className="w-full rounded-[2rem] object-cover" />
           </div>
         </div>

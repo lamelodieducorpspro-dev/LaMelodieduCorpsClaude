@@ -1,12 +1,13 @@
 import Menopause from "@/components/pages/Menopause";
 import StructuredData from "@/components/site/StructuredData";
-import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
+import { buildMetadata, buildFAQJsonLd, buildBreadcrumb, SITE_BASE_URL } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Ménopause & alimentation naturelle",
   description:
     "Nutrition pour la ménopause et périménopause. Bouffées de chaleur, prise de poids, fatigue, sommeil — approche naturelle à Bouillante, Guadeloupe et en visio.",
   path: "/menopause-alimentation-guadeloupe",
+  image: `${SITE_BASE_URL}/images/menopause-femme-epanouie-vitalite-guadeloupe.webp`,
   keywords: [
     "ménopause",
     "périménopause",

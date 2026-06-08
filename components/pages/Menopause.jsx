@@ -21,7 +21,7 @@ export default function Menopause() {
       overline="Santé hormonale féminine · Ménopause & Périménopause"
       h1="Ménopause : retrouver énergie, confort et sérénité naturellement"
       heroImg={IMG.menopause}
-      heroAlt="Ménopause et nutrition : accompagnement bienveillant par Apolline à Bouillante, Guadeloupe"
+      heroAlt="Femme épanouie à la ménopause, rayonnante de vitalité et de confiance — accompagnement nutrition holistique à Bouillante, Guadeloupe"
       intro="La ménopause est une transition naturelle, pas une maladie. Pourtant, bouffées de chaleur, prise de poids, troubles du sommeil, fatigue… ces symptômes peuvent vraiment impacter la qualité de vie. Mon accompagnement t'aide à traverser cette période avec plus d'outils concrets, de douceur et d'écoute."
       symptomsTitle="Ce que tu vis peut-être en ce moment"
       symptomsLead="Périménopause et ménopause se manifestent différemment d'une femme à l'autre. Ces symptômes sont réels et méritent une attention adaptée — pas des injonctions à «bien vieillir»."
@@ -61,7 +61,7 @@ export default function Menopause() {
       quote="La ménopause n'est pas une fin. C'est une invitation à prendre soin de soi autrement, avec plus de connaissance et d'écoute."
       mechanismTitle="Quel rôle peut jouer l'alimentation pendant la ménopause ?"
       mechanismParagraphs={[
-        "L'alimentation ne supprime pas les symptômes de la ménopause. Mais elle peut soutenir ton corps dans cette transition en agissant sur plusieurs leviers essentiels.",
+        "L'alimentation soutient ton corps dans cette transition en agissant sur plusieurs leviers essentiels.",
         "À la ménopause, la sensibilité à l'insuline change, les besoins en calcium et en vitamine D augmentent, le risque cardiovasculaire évolue. Adapter l'alimentation à ces changements, c'est agir concrètement sur ce qui se passe dans ton corps.",
         "L'approche n'est pas un régime restrictif. C'est une façon de nourrir ton corps pour qu'il traverse cette période avec le plus de vitalité et de confort possible.",
       ]}
@@ -131,7 +131,7 @@ export default function Menopause() {
       faq={[
         {
           q: "L'alimentation peut-elle vraiment réduire les bouffées de chaleur ?",
-          a: "Certains ajustements alimentaires peuvent contribuer à les atténuer chez certaines femmes — notamment réduire les excitants, stabiliser la glycémie et soutenir le système nerveux. Les résultats varient selon les personnes.",
+          a: "Certains ajustements alimentaires peuvent contribuer à les atténuer chez beaucoup de femmes — notamment réduire les excitants, stabiliser la glycémie et soutenir le système nerveux. Les résultats varient selon les personnes.",
         },
         {
           q: "Faut-il prendre des compléments alimentaires pendant la ménopause ?",
