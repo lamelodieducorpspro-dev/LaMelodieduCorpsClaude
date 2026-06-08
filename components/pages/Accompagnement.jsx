@@ -4,7 +4,7 @@ import { ArrowRight, Check, MapPin, Car, Laptop, Sparkles, Heart, Moon, Brain, L
 import { IMG } from "@/lib/constants";
 
 const pourQui = [
-  "Souffre de SOPK, d'endométriose ou de troubles du cycle",
+  "Souffre de SMOP, d'endométriose ou de troubles du cycle",
   "A un SPM marqué ou des règles douloureuses",
   "Traverse la ménopause ou la périménopause",
   "Ressent une fatigue chronique inexpliquée",
@@ -34,7 +34,7 @@ export default function Accompagnement() {
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed mb-6">
               Un suivi global, personnalisé et progressif — spécialisé en santé hormonale féminine.
-              SOPK · Endométriose · SPM · Ménopause · Fatigue chronique · Digestion.
+              SMOP · Endométriose · SPM · Ménopause · Fatigue chronique · Digestion.
             </p>
             <div className="flex flex-wrap gap-6 mb-8 text-sm text-[#4A5D54]">
               <span className="inline-flex items-center gap-2"><MapPin className="w-4 h-4 text-sage" /> Bouillante</span>

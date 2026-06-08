@@ -10,6 +10,7 @@ export const metadata = buildMetadata({
   keywords: [
     "appel découverte gratuit",
     "prendre rendez-vous santé féminine Guadeloupe",
+    "SMOP rendez-vous",
     "SOPK rendez-vous",
     "contact Bouillante",
     "réservation visio",

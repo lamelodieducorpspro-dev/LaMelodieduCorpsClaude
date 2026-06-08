@@ -48,7 +48,7 @@ export default function Footer() {
         <div className="md:col-span-2">
           <h4 className="text-white font-serif text-xl mb-4">Spécialités</h4>
           <ul className="space-y-2 text-sm text-[#D5C8B5]">
-            <li><Link href="/sopk-alimentation-guadeloupe" className="hover:text-white">SOPK</Link></li>
+            <li><Link href="/sopk-alimentation-guadeloupe" className="hover:text-white">SMOP</Link></li>
             <li><Link href="/endometriose-alimentation-guadeloupe" className="hover:text-white">Endométriose</Link></li>
             <li><Link href="/menopause-alimentation-guadeloupe" className="hover:text-white">Ménopause</Link></li>
             <li><Link href="/mon-accompagnement" className="hover:text-white">Fatigue chronique</Link></li>

@@ -10,7 +10,7 @@ const symptoms = [
   "Fatigue persistante sans explication claire",
   "SPM marqué ou règles douloureuses",
   "Cycle irrégulier ou difficile à vivre",
-  "SOPK, endométriose ou troubles gynécologiques",
+  "SMOP, endométriose ou troubles gynécologiques",
   "Stress chronique, charge mentale, sommeil perturbé",
   "Préménopause ou ménopause inconfortable",
   "Sensation que ton corps est déséquilibré",
@@ -26,7 +26,7 @@ const pillars = [
 ];
 
 const specialties = [
-  { tag: "SOPK", title: "SOPK", img: IMG.sopk, to: "/sopk-alimentation-guadeloupe",
+  { tag: "SMOP", title: "SMOP", img: IMG.sopk, to: "/sopk-alimentation-guadeloupe",
     desc: "Cycles irréguliers, fatigue, fringales, acné, prise de poids... L'alimentation est l'un des leviers les plus puissants pour soutenir ton équilibre hormonal naturellement." },
   { tag: "Endométriose", title: "Endométriose", img: IMG.endo, to: "/endometriose-alimentation-guadeloupe",
     desc: "Douleurs chroniques, inflammation, troubles digestifs, fatigue profonde... Une approche holistique peut considérablement améliorer ton confort au quotidien." },
@@ -83,7 +83,7 @@ export default function Home() {
             <p className="overline mb-5">Praticienne en nutrition holistique · Guadeloupe</p>
             <HeroHeadline />
             <p className="text-lg text-[#4A5D54] max-w-xl mb-8 leading-relaxed">
-              Tu souffres de SOPK, d'endométriose, de fatigue chronique ou de troubles du cycle ?
+              Tu souffres de SMOP, d'endométriose, de fatigue chronique ou de troubles du cycle ?
               J'accompagne les femmes à mieux comprendre leur corps et à retrouver équilibre,
               énergie et sérénité — par l'alimentation et l'hygiène de vie.
             </p>

@@ -15,7 +15,7 @@ const ROUTE_LABELS = {
   "/": "Accueil",
   "/a-propos": "À propos",
   "/mon-accompagnement": "Mon accompagnement",
-  "/sopk-alimentation-guadeloupe": "SOPK",
+  "/sopk-alimentation-guadeloupe": "SMOP",
   "/endometriose-alimentation-guadeloupe": "Endométriose",
   "/menopause-alimentation-guadeloupe": "Ménopause",
   "/cours-yoga-bouillante-guadeloupe": "Yoga",

@@ -4,11 +4,12 @@ import { buildMetadata, buildFAQJsonLd, buildBreadcrumb } from "@/lib/seo";
 import { faqCategories } from "@/lib/faq-data";
 
 export const metadata = buildMetadata({
-  title: "FAQ — Nutrition, SOPK & Santé Féminine",
+  title: "FAQ — Nutrition, SMOP & Santé Féminine",
   description:
-    "Toutes tes questions sur la nutrition et la santé féminine : SOPK, endométriose, ménopause, fatigue. Apolline répond clairement pour t'aider à faire le bon choix.",
+    "Toutes tes questions sur la nutrition et la santé féminine : SMOP, endométriose, ménopause, fatigue. Apolline répond clairement pour t'aider à faire le bon choix.",
   path: "/faq",
   keywords: [
+    "FAQ SMOP",
     "FAQ SOPK",
     "FAQ endométriose alimentation",
     "FAQ ménopause nutrition",

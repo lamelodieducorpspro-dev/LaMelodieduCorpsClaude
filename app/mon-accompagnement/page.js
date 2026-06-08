@@ -5,11 +5,12 @@ import { buildMetadata, buildBreadcrumb, SITE_BASE_URL } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Accompagnement santé féminine",
   description:
-    "Accompagnement personnalisé en nutrition et santé hormonale féminine : bilan complet, suivi individuel, SOPK, endométriose, ménopause. Cabinet à Bouillante, Guadeloupe ou visio France entière.",
+    "Accompagnement personnalisé en nutrition et santé hormonale féminine : bilan complet, suivi individuel, SMOP, endométriose, ménopause. Cabinet à Bouillante, Guadeloupe ou visio France entière.",
   path: "/mon-accompagnement",
   keywords: [
     "accompagnement santé féminine",
     "santé hormonale féminine",
+    "SMOP",
     "SOPK",
     "endométriose",
     "ménopause",
@@ -28,7 +29,7 @@ const serviceJsonLd = {
   "@id": `${SITE_BASE_URL}/mon-accompagnement#service`,
   name: "Accompagnement en nutrition et santé hormonale féminine",
   description:
-    "Accompagnement personnalisé en nutrition holistique et santé féminine : bilan initial, suivi individuel, programmes SOPK, endométriose, ménopause, fatigue. Cabinet à Bouillante, Guadeloupe et visio partout en France.",
+    "Accompagnement personnalisé en nutrition holistique et santé féminine : bilan initial, suivi individuel, programmes SMOP, endométriose, ménopause, fatigue. Cabinet à Bouillante, Guadeloupe et visio partout en France.",
   provider: { "@id": `${SITE_BASE_URL}/#localbusiness` },
   serviceType: "Nutrition holistique et santé féminine",
   areaServed: ["Guadeloupe", "France"],

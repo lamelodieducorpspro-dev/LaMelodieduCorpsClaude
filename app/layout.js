@@ -27,7 +27,7 @@ export const metadata = {
     template: "%s · La Mélodie du Corps",
   },
   description:
-    "Apolline accompagne les femmes en nutrition holistique et santé féminine à Bouillante et à distance. SOPK, endométriose, ménopause, fatigue. Appel découverte gratuit.",
+    "Apolline accompagne les femmes en nutrition holistique et santé féminine à Bouillante et à distance. SMOP, endométriose, ménopause, fatigue. Appel découverte gratuit.",
   applicationName: "La Mélodie du Corps",
   authors: [{ name: "Apolline Maysounabe", url: SITE_BASE_URL }],
   creator: "Apolline Maysounabe",

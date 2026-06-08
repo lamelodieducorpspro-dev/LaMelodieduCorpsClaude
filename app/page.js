@@ -5,11 +5,12 @@ export const metadata = buildMetadata({
   title:
     "La Mélodie du Corps — Santé Hormonale Féminine, Guadeloupe",
   description:
-    "Apolline, praticienne en nutrition et santé féminine à Bouillante, Guadeloupe. SOPK, endométriose, ménopause, fatigue. Appel découverte gratuit.",
+    "Apolline, praticienne en nutrition et santé féminine à Bouillante, Guadeloupe. SMOP, endométriose, ménopause, fatigue. Appel découverte gratuit.",
   path: "/",
   absoluteTitle: true,
   keywords: [
     "santé hormonale féminine",
+    "SMOP",
     "SOPK",
     "endométriose",
     "ménopause",
