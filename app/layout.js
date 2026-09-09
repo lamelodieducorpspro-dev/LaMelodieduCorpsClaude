@@ -32,7 +32,6 @@ export const metadata = {
   authors: [{ name: "Apolline Maysounabe", url: SITE_BASE_URL }],
   creator: "Apolline Maysounabe",
   publisher: "La Mélodie du Corps",
-  alternates: { canonical: SITE_BASE_URL },
   openGraph: {
     type: "website",
     locale: "fr_FR",
