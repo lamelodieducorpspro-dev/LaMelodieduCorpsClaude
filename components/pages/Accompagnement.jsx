@@ -107,9 +107,9 @@ export default function Accompagnement() {
             {[
               { n: "01", t: "L'appel découverte", p: "Gratuit · 15 min · Sans engagement",
                 d: "Tu me décris ta situation, tes symptômes, tes attentes. Je t'explique comment je travaille. Repars avec de la clarté." },
-              { n: "02", t: "La séance bilan", p: "2h · 90€ cabinet/visio · 100€ domicile",
+              { n: "02", t: "La séance bilan", p: "2h · 100€ cabinet/visio · 110€ domicile",
                 d: "Un bilan approfondi : histoire de santé, alimentation, cycle, énergie, sommeil, stress, digestion, objectifs. Repars avec un plan d'action personnalisé." },
-              { n: "03", t: "Les séances de suivi", p: "1h · 50€ cabinet/visio · 60€ domicile",
+              { n: "03", t: "Les séances de suivi", p: "1h · 60€ cabinet/visio · 70€ domicile",
                 d: "Minimum 3 séances sur 3 à 4 mois. On ajuste, on approfondit, on consolide. Disponibilité par message entre les séances." },
             ].map((s) => (
               <div key={s.n} className="grid md:grid-cols-12 gap-6 bg-cream-2 rounded-[2rem] p-8 md:p-12">

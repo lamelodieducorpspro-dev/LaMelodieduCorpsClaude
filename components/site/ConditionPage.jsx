@@ -214,12 +214,12 @@ export default function ConditionPage({
               },
               {
                 title: "Séance bilan",
-                price: "2h · 90€ cabinet/visio",
+                price: "2h · 100€ cabinet/visio",
                 desc: "Bilan complet : alimentation, cycle, énergie, sommeil, stress, digestion. Un plan d'action co-construit selon ta situation.",
               },
               {
                 title: "Séances de suivi",
-                price: "1h · 50€ cabinet/visio",
+                price: "1h · 60€ cabinet/visio",
                 desc: "Minimum 3 séances sur 3 à 4 mois pour vraiment ancrer les changements. On ajuste ensemble au fil du temps.",
               },
             ].map((s, i) => (

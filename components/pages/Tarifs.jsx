@@ -28,8 +28,8 @@ export default function Tarifs() {
             </div>
             {[
               { s: "Appel découverte", d: "15 min", v: "Gratuit", h: "—" },
-              { s: "Séance bilan", d: "2h", v: "90€", h: "100€" },
-              { s: "Séance de suivi", d: "1h", v: "50€", h: "60€" },
+              { s: "Séance bilan", d: "2h", v: "100€", h: "110€" },
+              { s: "Séance de suivi", d: "1h", v: "60€", h: "70€" },
             ].map((row, i) => (
               <div key={i} className="grid grid-cols-12 px-6 py-6 border-t border-[#E2DCD0] items-center">
                 <div className="col-span-5 md:col-span-5 font-serif text-xl text-forest">{row.s}</div>
