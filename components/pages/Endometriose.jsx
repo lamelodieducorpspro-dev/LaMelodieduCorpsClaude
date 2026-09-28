@@ -93,7 +93,7 @@ export default function Endometriose() {
         {
           icon: Moon,
           title: "Sommeil & stress",
-          desc: "Le sommeil récupérateur et la gestion du stress sont des alliés puissants contre la douleur chronique.",
+          desc: "Le sommeil récupérateur et la gestion du stress sont des alliés précieux pour t'aider à mieux vivre avec la douleur chronique.",
         },
       ]}
       workTitle="Ce que nous pouvons travailler ensemble"
@@ -116,7 +116,7 @@ export default function Endometriose() {
         },
         {
           title: "Soutenir ton sommeil",
-          desc: "Le sommeil récupérateur est un allié puissant contre la douleur et l'inflammation — on travaille dessus.",
+          desc: "Le sommeil récupérateur est un allié précieux pour t'accompagner face à la douleur et l'inflammation — on travaille dessus.",
         },
         {
           title: "Organiser ton quotidien autour du cycle",

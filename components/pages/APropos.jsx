@@ -56,7 +56,7 @@ export default function APropos() {
             {[
               { icon: GraduationCap, t: "Certification Hygie Pro", d: "Formation complète en nutrition santé préventive et holistique — Lisa Salis. Approche globale par l'alimentation, l'hygiène de vie et la prévention." },
               { icon: Sun, t: "Professeure de Kundalini Yoga", d: "Pratique axée sur l'énergie, la respiration, la méditation et la conscience corporelle." },
-              { icon: Moon, t: "Professeure de Yin Yoga", d: "Pratique profonde et méditative pour libérer les tensions et rééquilibrer le système nerveux." },
+              { icon: Moon, t: "Professeure de Yin Yoga", d: "Pratique profonde et méditative pour libérer les tensions et apaiser le système nerveux." },
               { icon: BookOpen, t: "Formation continue", d: "Je me forme régulièrement sur la santé hormonale féminine, la nutrition fonctionnelle et les médecines douces." },
             ].map((c) => {
               const Icon = c.icon;

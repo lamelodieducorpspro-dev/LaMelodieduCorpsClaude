@@ -9,7 +9,7 @@ const pourQui = [
   "Traverse la ménopause ou la périménopause",
   "Ressent une fatigue chronique inexpliquée",
   "A des troubles digestifs persistants",
-  "Veut équilibrer ses hormones naturellement",
+  "Veut soutenir l'équilibre de ses hormones naturellement",
   "Cherche à comprendre son corps, pas juste à perdre du poids",
 ];
 

@@ -27,7 +27,7 @@ const pillars = [
 
 const specialties = [
   { tag: "SMOP (SOPK)", title: "SMOP (SOPK)", img: IMG.sopk, to: "/sopk-alimentation-guadeloupe",
-    desc: "Cycles irréguliers, fatigue, fringales, acné, prise de poids... L'alimentation est l'un des leviers les plus puissants pour soutenir ton équilibre hormonal naturellement." },
+    desc: "Cycles irréguliers, fatigue, fringales, acné, prise de poids... L'alimentation est l'un des leviers essentiels pour soutenir ton équilibre hormonal naturellement." },
   { tag: "Endométriose", title: "Endométriose", img: IMG.endo, to: "/endometriose-alimentation-guadeloupe",
     desc: "Douleurs chroniques, inflammation, troubles digestifs, fatigue profonde... Une approche holistique peut considérablement améliorer ton confort au quotidien." },
   { tag: "Ménopause", title: "Ménopause & périménopause", img: IMG.menopause, to: "/menopause-alimentation-guadeloupe",
