@@ -20,16 +20,16 @@ const pillars = [
   { icon: Sparkles, title: "Alimentation", desc: "Des ajustements concrets adaptés à ta vie réelle en Guadeloupe, sans frustration ni perfection." },
   { icon: Heart, title: "Cycle féminin & hormones", desc: "Comprendre et soutenir l'équilibre hormonal à chaque étape de la vie." },
   { icon: Moon, title: "Sommeil & hygiène de vie", desc: "Parce que tout est lié : on travaille sur l'ensemble." },
-  { icon: Brain, title: "Stress & système nerveux", desc: "Le stress est le premier perturbateur hormonal. On l'identifie et on l'apprivoise." },
+  { icon: Brain, title: "Stress & système nerveux", desc: "Le stress fait partie des facteurs qui influencent l'équilibre hormonal. On l'identifie et on l'apprivoise." },
   { icon: Eye, title: "Écoute du corps", desc: "Apprendre à reconnaître ses signaux pour agir en conscience." },
-  { icon: Leaf, title: "Plantes & compléments", desc: "Quand c'est pertinent, pour soutenir l'équilibre naturellement." },
+  { icon: Leaf, title: "Plantes & compléments", desc: "Quand c'est pertinent, pour t'accompagner en complément, en accord avec ton suivi médical." },
 ];
 
 const specialties = [
   { tag: "SMOP (SOPK)", title: "SMOP (SOPK)", img: IMG.sopk, to: "/sopk-alimentation-guadeloupe",
-    desc: "Cycles irréguliers, fatigue, fringales, acné, prise de poids... L'alimentation est l'un des leviers essentiels pour soutenir ton équilibre hormonal naturellement." },
+    desc: "Cycles irréguliers, fatigue, fringales, acné, prise de poids... L'alimentation et le mode de vie font partie des leviers qui peuvent soutenir ton équilibre hormonal." },
   { tag: "Endométriose", title: "Endométriose", img: IMG.endo, to: "/endometriose-alimentation-guadeloupe",
-    desc: "Douleurs chroniques, inflammation, troubles digestifs, fatigue profonde... Une approche holistique peut considérablement améliorer ton confort au quotidien." },
+    desc: "Douleurs chroniques, inflammation, troubles digestifs, fatigue profonde... Une approche globale peut t'aider à gagner en confort au quotidien." },
   { tag: "Ménopause", title: "Ménopause & périménopause", img: IMG.menopause, to: "/menopause-alimentation-guadeloupe",
     desc: "Bouffées de chaleur, prise de poids, fatigue, humeur... Cette transition mérite un accompagnement doux, personnalisé et naturel." },
 ];

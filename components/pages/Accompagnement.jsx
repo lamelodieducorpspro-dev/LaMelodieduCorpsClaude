@@ -9,7 +9,7 @@ const pourQui = [
   "Traverse la ménopause ou la périménopause",
   "Ressent une fatigue chronique inexpliquée",
   "A des troubles digestifs persistants",
-  "Veut soutenir l'équilibre de ses hormones naturellement",
+  "Veut soutenir son équilibre hormonal par son alimentation et son mode de vie",
   "Cherche à comprendre son corps, pas juste à perdre du poids",
 ];
 
@@ -17,7 +17,7 @@ const leviers = [
   { icon: Sparkles, t: "Nutrition", d: "Ajustements concrets, adaptés à ta vie en Guadeloupe. Pas de suppression brutale, pas de frustration." },
   { icon: Heart, t: "Cycle féminin & hormones", d: "Comprendre les phases du cycle et adapter l'alimentation en conséquence." },
   { icon: Moon, t: "Sommeil & récupération", d: "Le sommeil est un pilier hormonal fondamental." },
-  { icon: Brain, t: "Gestion du stress", d: "Premier perturbateur hormonal. On identifie tes tensions et on met en place des outils concrets." },
+  { icon: Brain, t: "Gestion du stress", d: "Un des facteurs qui influencent l'équilibre hormonal. On identifie tes tensions et on met en place des outils concrets." },
   { icon: Leaf, t: "Plantes & compléments", d: "Quand c'est adapté, pour soutenir naturellement." },
   { icon: Wind, t: "Mouvement & respiration", d: "J'intègre le yoga et la respiration quand c'est pertinent." },
 ];
