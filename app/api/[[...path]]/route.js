@@ -227,6 +227,13 @@ async function handleRoute(request, { params }) {
         return cors(NextResponse.json({ error: "Trop de tentatives. Réessaie dans une heure." }, { status: 429 }));
       }
       const body = await request.json();
+
+      // Anti-spam : honeypot rempli, ou envoi trop rapide pour être humain → on fait semblant d'accepter.
+      const tooFast = typeof body.elapsed_ms === "number" && body.elapsed_ms < 1500;
+      if (body.website || tooFast) {
+        return cors(NextResponse.json({ id: uuidv4(), name: body.name || "", email: body.email || "", created_at: new Date().toISOString() }));
+      }
+
       if (!body.name || !isValidEmail(body.email) || !body.message || !body.message.trim()) {
         return cors(
           NextResponse.json(

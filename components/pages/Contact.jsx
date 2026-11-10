@@ -12,17 +12,25 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "Appel découverte gratuit", message: "" });
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [website, setWebsite] = useState(""); // honeypot — champ caché, rempli uniquement par les bots
+  const formRenderedAt = useState(() => Date.now())[0];
 
   const handle = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
   const submit = async (e) => {
     e.preventDefault();
+    if (website) {
+      // Bot détecté via le honeypot : on simule un envoi réussi sans rien faire.
+      setSent(true);
+      setForm({ name: "", email: "", phone: "", subject: "Appel découverte gratuit", message: "" });
+      return;
+    }
     setLoading(true);
     try {
       const res = await fetch(`${API}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, website, elapsed_ms: Date.now() - formRenderedAt }),
       });
       if (!res.ok) throw new Error("Server error");
       setSent(true);
@@ -168,6 +176,20 @@ export default function Contact() {
                 <form onSubmit={submit} className="bg-white rounded-[2rem] p-8 md:p-12 border border-[#E2DCD0] space-y-5">
                   <h3 className="font-serif text-3xl text-forest mb-2">Formulaire de contact</h3>
                   <p className="text-sm text-[#4A5D54] mb-6">Décris-moi ta situation, je reviens vers toi sous 48h.</p>
+
+                  {/* Honeypot anti-spam : champ invisible pour les humains, masqué visuellement et du lecteur d'écran */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px", width: 0, height: 0, overflow: "hidden" }}>
+                    <label htmlFor="website">Site web</label>
+                    <input
+                      id="website"
+                      name="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                    />
+                  </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
