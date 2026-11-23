@@ -8,7 +8,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { IMG } from "@/lib/constants";
 
 const navItems = [
-  { label: "Accueil", to: "/" },
   {
     label: "Mes spécialités",
     children: [
@@ -19,9 +18,10 @@ const navItems = [
   },
   { label: "Mon accompagnement", to: "/mon-accompagnement" },
   { label: "Yoga", to: "/cours-yoga-bouillante-guadeloupe" },
-  { label: "Tarifs", to: "/tarifs" },
+  { label: "Tarifs & RDV", to: "/tarifs" },
   { label: "FAQ", to: "/faq" },
   { label: "À propos", to: "/a-propos" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export default function Header() {
@@ -105,7 +105,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/contact" data-testid="header-cta" className="btn-primary !py-3.5 !px-7 !text-sm whitespace-nowrap">
+          <Link href="/tarifs" data-testid="header-cta" className="btn-primary !py-3.5 !px-7 !text-sm whitespace-nowrap">
             Prendre RDV
           </Link>
           <button
@@ -151,7 +151,7 @@ export default function Header() {
               )
             )}
             <Link
-              href="/contact"
+              href="/tarifs"
               onClick={() => setOpen(false)}
               data-testid="mobile-cta"
               className="btn-primary mt-4 justify-center"

@@ -92,7 +92,7 @@ export default function Home() {
               <span className="inline-flex items-center gap-2"><Laptop className="w-4 h-4 text-sage" /> Visio France entière</span>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact" data-testid="hero-cta-primary" className="btn-primary">
+              <Link href="/tarifs" data-testid="hero-cta-primary" className="btn-primary">
                 Réserver mon appel découverte gratuit <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/mon-accompagnement" data-testid="hero-cta-secondary" className="btn-secondary">
@@ -138,7 +138,7 @@ export default function Home() {
               ton mode de vie et ton équilibre hormonal — pour avancer avec des solutions concrètes
               et adaptées à ton quotidien.
             </p>
-            <Link href="/contact" data-testid="identification-cta" className="btn-primary">
+            <Link href="/tarifs" data-testid="identification-cta" className="btn-primary">
               Échangeons sur ta situation <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -248,7 +248,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Link href="/contact" data-testid="process-cta" className="btn-primary">
+            <Link href="/tarifs" data-testid="process-cta" className="btn-primary">
               Réserver mon appel découverte gratuit <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -349,7 +349,7 @@ export default function Home() {
                 répondre à tes questions et voir si mon accompagnement peut te convenir.
                 Sans engagement. Sans pression.
               </p>
-              <Link href="/contact" data-testid="final-cta-btn"
+              <Link href="/tarifs" data-testid="final-cta-btn"
                 className="inline-flex items-center gap-2 bg-terracotta hover:bg-[#a87863] text-white px-8 py-4 rounded-full font-medium transition-all hover:-translate-y-1">
                 Réserver mon appel découverte gratuit <ArrowRight className="w-4 h-4" />
               </Link>

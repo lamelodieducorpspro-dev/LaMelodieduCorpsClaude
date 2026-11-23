@@ -19,7 +19,7 @@ const ROUTE_LABELS = {
   "/endometriose-alimentation-guadeloupe": "Endométriose",
   "/menopause-alimentation-guadeloupe": "Ménopause",
   "/cours-yoga-bouillante-guadeloupe": "Yoga",
-  "/tarifs": "Tarifs",
+  "/tarifs": "Tarifs & réservation",
   "/faq": "FAQ",
   "/contact": "Contact",
   "/cgv": "CGV",

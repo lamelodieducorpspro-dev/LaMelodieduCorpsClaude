@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { toast } from "sonner";
 import { MapPin, Phone, Mail, MessageCircle, Send, Calendar, ArrowRight, CheckCircle2 } from "lucide-react";
 import { WHATSAPP_LINK, WHATSAPP_DISPLAY, EMAIL, ADDRESS } from "@/lib/constants";
-import { SETMORE_SERVICES } from "@/lib/setmore";
 
 const API = "/api";
 
@@ -47,66 +47,40 @@ export default function Contact() {
     <>
       <section className="pt-32 pb-12 md:pt-44">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
-          <p className="overline mb-5">Prendre rendez-vous</p>
+          <p className="overline mb-5">Contact · La Mélodie du Corps</p>
           <h1 className="font-serif text-5xl md:text-7xl text-forest leading-[1.1] mb-6">
-            Appel découverte <em className="text-terracotta">gratuit</em> — Santé féminine, Guadeloupe
+            <em className="text-terracotta">Écris-moi</em> — Nutrition & Santé féminine, Guadeloupe
           </h1>
           <p className="text-lg text-[#4A5D54] leading-relaxed">
-            Réserve directement ta séance en ligne, ou écris-moi via le formulaire.
-            L'appel découverte de 15 minutes est offert et sans engagement.
+            Écris-moi via le formulaire, par WhatsApp ou par email — je te réponds sous 48h.
+            Pour réserver directement un créneau, rendez-vous sur la page Tarifs & Réservation.
           </p>
         </div>
       </section>
 
-      {/* Setmore — réservation en ligne */}
-      <section className="pb-20" data-testid="setmore-section">
-        <div className="max-w-6xl mx-auto px-6 md:px-10">
-          <div className="flex items-center gap-3 mb-8">
-            <Calendar className="w-5 h-5 text-terracotta" />
-            <p className="overline">Réservation en ligne · Via Setmore</p>
+      {/* Renvoi vers la page de réservation */}
+      <section className="pb-16" data-testid="booking-pointer">
+        <div className="max-w-4xl mx-auto px-6 md:px-10">
+          <div className="bg-forest text-white rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <Calendar className="w-5 h-5 text-sand" />
+                <p className="text-xs uppercase tracking-[0.2em] text-sand font-medium">Réservation en ligne</p>
+              </div>
+              <h2 className="font-serif text-2xl md:text-3xl !text-white mb-2 leading-tight">
+                Tu veux réserver une séance ?
+              </h2>
+              <p className="text-[#D5C8B5] leading-relaxed">
+                Les tarifs et la réservation d'un créneau se trouvent sur la page Tarifs & Réservation —
+                appel découverte gratuit, séance bilan et séances de suivi.
+              </p>
+            </div>
+            <div className="md:flex-shrink-0">
+              <Link href="/tarifs" className="btn-primary !bg-white !text-forest whitespace-nowrap" data-testid="contact-to-booking">
+                Voir les tarifs & réserver <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
-          <h2 className="font-serif text-3xl md:text-4xl text-forest mb-10 max-w-2xl">
-            Choisis ton type de séance et réserve directement un créneau
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SETMORE_SERVICES.map((s) => (
-              <a
-                key={s.id}
-                href={s.url}
-                target="_blank"
-                rel="noreferrer"
-                data-testid={`setmore-${s.id}`}
-                className={`group block rounded-[1.5rem] p-7 border transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] ${
-                  s.highlight
-                    ? "bg-forest text-white border-forest"
-                    : "bg-white border-[#E2DCD0] hover:border-sage"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <span className={`text-xs uppercase tracking-[0.2em] font-medium ${s.highlight ? "text-sand" : "text-sage"}`}>
-                    {s.duration}
-                  </span>
-                  <span className={`font-serif text-2xl ${s.highlight ? "text-white" : "text-terracotta"}`}>
-                    {s.price}
-                  </span>
-                </div>
-                <h3 className={`font-serif text-xl mb-3 leading-tight ${s.highlight ? "!text-white" : "text-forest"}`}>
-                  {s.title}
-                </h3>
-                <p className={`text-sm leading-relaxed mb-6 ${s.highlight ? "text-[#D5C8B5]" : "text-[#4A5D54]"}`}>
-                  {s.desc}
-                </p>
-                <span className={`inline-flex items-center gap-2 text-sm font-medium ${s.highlight ? "text-white" : "text-forest"}`}>
-                  Réserver <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
-            ))}
-          </div>
-
-          <p className="text-center text-xs text-[#4A5D54] mt-8 italic">
-            La réservation s'ouvre dans une nouvelle fenêtre sur la plateforme sécurisée Setmore.
-          </p>
         </div>
       </section>
 

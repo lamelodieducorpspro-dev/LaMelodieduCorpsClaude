@@ -40,7 +40,7 @@ export default function Accompagnement() {
               <span className="inline-flex items-center gap-2"><MapPin className="w-4 h-4 text-sage" /> Bouillante</span>
               <span className="inline-flex items-center gap-2"><Laptop className="w-4 h-4 text-sage" /> Visio France</span>
             </div>
-            <Link href="/contact" data-testid="accomp-hero-cta" className="btn-primary">
+            <Link href="/tarifs" data-testid="accomp-hero-cta" className="btn-primary">
               Réserver mon appel découverte gratuit <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -138,7 +138,7 @@ export default function Accompagnement() {
           <p className="text-[#4A5D54] leading-relaxed mb-8 max-w-2xl mx-auto">
             Un appel de 15 minutes. Gratuit. Sans engagement. Tu me parles de toi, je t'explique comment je peux t'aider.
           </p>
-          <Link href="/contact" className="btn-primary" data-testid="accomp-final-cta">
+          <Link href="/tarifs" className="btn-primary" data-testid="accomp-final-cta">
             Réserver mon appel découverte gratuit <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

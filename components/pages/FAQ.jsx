@@ -62,7 +62,7 @@ export default function FAQ() {
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-forest mb-6">Une autre question ?</h2>
           <p className="text-[#4A5D54] mb-8">Le mieux, c&apos;est qu&apos;on en parle directement.</p>
-          <Link href="/contact" className="btn-primary" data-testid="faq-cta">
+          <Link href="/tarifs" className="btn-primary" data-testid="faq-cta">
             Réserver mon appel découverte gratuit <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

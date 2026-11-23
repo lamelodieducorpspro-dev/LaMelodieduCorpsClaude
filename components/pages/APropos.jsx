@@ -146,7 +146,7 @@ export default function APropos() {
           <h2 className="font-serif text-3xl md:text-4xl text-forest mb-6">Tu veux savoir si mon accompagnement est fait pour toi ?</h2>
           <p className="text-[#4A5D54] mb-8">Le meilleur moyen de le savoir, c'est de se parler.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="btn-primary" data-testid="apropos-cta-primary">
+            <Link href="/tarifs" className="btn-primary" data-testid="apropos-cta-primary">
               Réserver mon appel découverte <ArrowRight className="w-4 h-4" />
             </Link>
             <Link href="/mon-accompagnement" className="btn-secondary">Découvrir mon accompagnement</Link>

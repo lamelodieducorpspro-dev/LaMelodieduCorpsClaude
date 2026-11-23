@@ -3,17 +3,16 @@ import StructuredData from "@/components/site/StructuredData";
 import { buildMetadata, buildBreadcrumb } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Appel découverte gratuit — Guadeloupe",
+  title: "Contact — nutrition & santé féminine, Guadeloupe",
   description:
-    "Réserve ton appel découverte gratuit de 15 min avec Apolline. Cabinet à Bouillante, Guadeloupe, disponible aussi en visio partout en France. Répond sous 48h.",
+    "Écris à Apolline Maysounabe — formulaire, WhatsApp ou email, réponse sous 48h. Cabinet à Bouillante, Guadeloupe, et consultations en visio partout en France.",
   path: "/contact",
   keywords: [
-    "appel découverte gratuit",
-    "prendre rendez-vous santé féminine Guadeloupe",
-    "SMOP rendez-vous",
-    "SOPK rendez-vous",
+    "contact nutritionniste Guadeloupe",
     "contact Bouillante",
-    "réservation visio",
+    "praticienne nutrition santé féminine contact",
+    "WhatsApp nutrition Guadeloupe",
+    "consultation visio nutrition",
   ],
 });
 
@@ -24,7 +23,7 @@ export default function Page() {
         id="jsonld-bc-contact"
         data={buildBreadcrumb([
           { name: "Accueil", path: "/" },
-          { name: "Prendre rendez-vous", path: "/contact" },
+          { name: "Contact", path: "/contact" },
         ])}
       />
       <Contact />

@@ -38,10 +38,10 @@ export default function Footer() {
             <li><Link href="/" className="hover:text-white">Accueil</Link></li>
             <li><Link href="/mon-accompagnement" className="hover:text-white">Accompagnement</Link></li>
             <li><Link href="/cours-yoga-bouillante-guadeloupe" className="hover:text-white">Yoga</Link></li>
-            <li><Link href="/tarifs" className="hover:text-white">Tarifs</Link></li>
+            <li><Link href="/tarifs" className="hover:text-white">Tarifs & RDV</Link></li>
             <li><Link href="/a-propos" className="hover:text-white">À propos</Link></li>
             <li><Link href="/faq" className="hover:text-white">FAQ</Link></li>
-            <li><Link href="/contact" className="hover:text-white">Prendre RDV</Link></li>
+            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
           </ul>
         </div>
 

@@ -40,7 +40,7 @@ export default function ConditionPage({
             </h1>
             <p className="text-lg text-[#4A5D54] leading-relaxed mb-8">{intro}</p>
             <div className="flex flex-wrap gap-3 mb-8">
-              <Link href="/contact" className="btn-primary" data-testid="condition-cta-hero">
+              <Link href="/tarifs" className="btn-primary" data-testid="condition-cta-hero">
                 Réserver mon appel découverte <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/mon-accompagnement" className="btn-secondary">
@@ -288,7 +288,7 @@ export default function ConditionPage({
           <p className="text-[#4A5D54] mb-10 text-lg">
             L'appel découverte est gratuit et sans engagement. 15 minutes pour se connaître.
           </p>
-          <Link href="/contact" className="btn-primary" data-testid="condition-cta-final">
+          <Link href="/tarifs" className="btn-primary" data-testid="condition-cta-final">
             Réserver mon appel découverte <ArrowRight className="w-4 h-4" />
           </Link>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
