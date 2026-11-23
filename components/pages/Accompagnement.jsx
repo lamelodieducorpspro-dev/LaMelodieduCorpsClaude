@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, MapPin, Car, Laptop, Sparkles, Heart, Moon, Brain, Leaf, Wind } from "lucide-react";
+import { ArrowRight, Check, MapPin, Laptop, Sparkles, Heart, Moon, Brain, Leaf, Wind } from "lucide-react";
 import { IMG } from "@/lib/constants";
 
 const pourQui = [
@@ -38,7 +38,6 @@ export default function Accompagnement() {
             </p>
             <div className="flex flex-wrap gap-6 mb-8 text-sm text-[#4A5D54]">
               <span className="inline-flex items-center gap-2"><MapPin className="w-4 h-4 text-sage" /> Bouillante</span>
-              <span className="inline-flex items-center gap-2"><Car className="w-4 h-4 text-sage" /> À domicile</span>
               <span className="inline-flex items-center gap-2"><Laptop className="w-4 h-4 text-sage" /> Visio France</span>
             </div>
             <Link href="/contact" data-testid="accomp-hero-cta" className="btn-primary">
@@ -107,10 +106,10 @@ export default function Accompagnement() {
             {[
               { n: "01", t: "L'appel découverte", p: "Gratuit · 15 min · Sans engagement",
                 d: "Tu me décris ta situation, tes symptômes, tes attentes. Je t'explique comment je travaille. Repars avec de la clarté." },
-              { n: "02", t: "La séance bilan", p: "2h · 100€ cabinet/visio · 110€ domicile",
-                d: "Un bilan approfondi : histoire de santé, alimentation, cycle, énergie, sommeil, stress, digestion, objectifs. Repars avec un plan d'action personnalisé." },
-              { n: "03", t: "Les séances de suivi", p: "1h · 60€ cabinet/visio · 70€ domicile",
-                d: "Minimum 3 séances sur 3 à 4 mois. On ajuste, on approfondit, on consolide. Disponibilité par message entre les séances." },
+              { n: "02", t: "Les 2 séances bilan", p: "2 × 2h · 110€ la séance",
+                d: "Deux temps pour tout poser : histoire de santé, alimentation, cycle, énergie, sommeil, stress, digestion, objectifs. Repars avec un plan d'action personnalisé et co-construit." },
+              { n: "03", t: "Les 3 séances de suivi", p: "3 × 1h30 · 80€ la séance",
+                d: "Sur 3 à 4 mois. On ajuste, on approfondit, on consolide. Disponibilité par message entre les séances, et possibilité d'ajouter des séances de suivi si besoin." },
             ].map((s) => (
               <div key={s.n} className="grid md:grid-cols-12 gap-6 bg-cream-2 rounded-[2rem] p-8 md:p-12">
                 <div className="md:col-span-2 font-serif text-6xl text-terracotta">{s.n}</div>
@@ -124,6 +123,12 @@ export default function Accompagnement() {
               </div>
             ))}
           </div>
+          <p className="text-[#4A5D54] leading-relaxed mt-8 max-w-3xl">
+            L'accompagnement se construit sur une base de <strong className="text-forest font-medium">5 séances</strong> —
+            2 séances bilan puis 3 séances de suivi, soit 460€ au total. Si ta situation le demande,
+            on peut ajouter des séances de suivi à ton rythme (1h30 · 80€).
+            Séances en cabinet à Bouillante ou en visio partout en France.
+          </p>
         </div>
       </section>
 

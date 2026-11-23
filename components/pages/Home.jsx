@@ -36,8 +36,8 @@ const specialties = [
 
 const steps = [
   { num: "01", title: "Appel découverte", price: "Gratuit · 15 min", desc: "On fait connaissance. Tu me parles de ta situation, je t'explique comment je peux t'aider. Aucune pression." },
-  { num: "02", title: "Séance bilan", price: "2h · 100€ cabinet/visio · 110€ domicile", desc: "Un bilan approfondi sur ta santé globale : alimentation, cycle, énergie, sommeil, stress, digestion." },
-  { num: "03", title: "Séances de suivi", price: "1h · 60€ cabinet/visio · 70€ domicile", desc: "Minimum 3 séances sur 3 à 4 mois. On ajuste, on approfondit, on avance à ton rythme." },
+  { num: "02", title: "Les 2 séances bilan", price: "2 × 2h · 110€ la séance", desc: "Un bilan approfondi sur ta santé globale : alimentation, cycle, énergie, sommeil, stress, digestion. Deux temps pour tout poser et construire ton plan." },
+  { num: "03", title: "Les 3 séances de suivi", price: "3 × 1h30 · 80€ la séance", desc: "Sur 3 à 4 mois. On ajuste, on approfondit, on avance à ton rythme — avec la possibilité d'ajouter des séances si besoin." },
 ];
 
 export default function Home() {
@@ -89,7 +89,6 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-6 mb-10 text-sm text-[#4A5D54]">
               <span className="inline-flex items-center gap-2"><MapPin className="w-4 h-4 text-sage" /> Cabinet à Bouillante</span>
-              <span className="inline-flex items-center gap-2"><Phone className="w-4 h-4 text-sage" /> À domicile</span>
               <span className="inline-flex items-center gap-2"><Laptop className="w-4 h-4 text-sage" /> Visio France entière</span>
             </div>
             <div className="flex flex-wrap gap-4">

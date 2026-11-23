@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin, Phone, Laptop, Plus, Minus } from "lucide-react";
+import { ArrowRight, MapPin, Laptop, Plus, Minus } from "lucide-react";
 import { GOOGLE_REVIEW_COUNT, GOOGLE_REVIEW_RATING } from "@/lib/constants";
 
 export default function ConditionPage({
@@ -50,9 +50,6 @@ export default function ConditionPage({
             <div className="flex flex-wrap gap-5 text-sm text-[#4A5D54]">
               <span className="inline-flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-sage" /> Cabinet à Bouillante
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <Phone className="w-4 h-4 text-sage" /> À domicile Côte-sous-le-Vent
               </span>
               <span className="inline-flex items-center gap-2">
                 <Laptop className="w-4 h-4 text-sage" /> Visio France entière
@@ -213,14 +210,14 @@ export default function ConditionPage({
                 desc: "On se parle de ta situation, de ce que tu traverses et de comment je peux t'aider. Sans pression, sans engagement.",
               },
               {
-                title: "Séance bilan",
-                price: "2h · 100€ cabinet/visio",
-                desc: "Bilan complet : alimentation, cycle, énergie, sommeil, stress, digestion. Un plan d'action co-construit selon ta situation.",
+                title: "2 séances bilan",
+                price: "2 × 2h · 110€ la séance",
+                desc: "Bilan complet en deux temps : alimentation, cycle, énergie, sommeil, stress, digestion. Un plan d'action co-construit selon ta situation.",
               },
               {
-                title: "Séances de suivi",
-                price: "1h · 60€ cabinet/visio",
-                desc: "Minimum 3 séances sur 3 à 4 mois pour vraiment ancrer les changements. On ajuste ensemble au fil du temps.",
+                title: "3 séances de suivi",
+                price: "3 × 1h30 · 80€ la séance",
+                desc: "Sur 3 à 4 mois, pour vraiment ancrer les changements. On ajuste ensemble au fil du temps, et on peut ajouter des séances si besoin.",
               },
             ].map((s, i) => (
               <div
@@ -237,9 +234,6 @@ export default function ConditionPage({
           <div className="mt-8 flex flex-wrap gap-6 text-sm text-[#4A5D54]">
             <span className="inline-flex items-center gap-2">
               <MapPin className="w-4 h-4 text-sage" /> Cabinet à Bouillante
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Phone className="w-4 h-4 text-sage" /> À domicile Côte-sous-le-Vent
             </span>
             <span className="inline-flex items-center gap-2">
               <Laptop className="w-4 h-4 text-sage" /> Visio France entière
@@ -301,7 +295,7 @@ export default function ConditionPage({
             {[
               "Appel gratuit · 15 min",
               "Sans engagement",
-              "Cabinet · Domicile · Visio",
+              "Cabinet à Bouillante · Visio",
               `${GOOGLE_REVIEW_COUNT} avis 5 étoiles`,
             ].map((tag) => (
               <span

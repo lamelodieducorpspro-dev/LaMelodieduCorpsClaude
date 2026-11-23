@@ -18,28 +18,38 @@ export default function Tarifs() {
 
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-6 md:px-10">
-          <h2 className="font-serif text-3xl text-forest mb-8">Accompagnement nutrition holistique</h2>
+          <h2 className="font-serif text-3xl text-forest mb-3">Accompagnement nutrition holistique</h2>
+          <p className="text-[#4A5D54] leading-relaxed mb-8 max-w-2xl">
+            L'accompagnement se construit sur une base de 5 séances : 2 séances bilan pour poser les fondations,
+            puis 3 séances de suivi pour ancrer les changements.
+          </p>
           <div className="bg-white rounded-[2rem] overflow-hidden border border-[#E2DCD0]">
             <div className="grid grid-cols-12 bg-cream-2 px-6 py-4 text-xs uppercase tracking-[0.2em] text-sage font-medium">
-              <div className="col-span-5 md:col-span-5">Séance</div>
+              <div className="col-span-6 md:col-span-6">Séance</div>
               <div className="col-span-3 md:col-span-3">Durée</div>
-              <div className="col-span-2 md:col-span-2 text-right">Cabinet / Visio</div>
-              <div className="col-span-2 md:col-span-2 text-right">À domicile</div>
+              <div className="col-span-3 md:col-span-3 text-right">Tarif</div>
             </div>
             {[
-              { s: "Appel découverte", d: "15 min", v: "Gratuit", h: "—" },
-              { s: "Séance bilan", d: "2h", v: "100€", h: "110€" },
-              { s: "Séance de suivi", d: "1h", v: "60€", h: "70€" },
+              { s: "Appel découverte", d: "15 min", v: "Gratuit" },
+              { s: "Séances bilan (×2)", d: "2h chacune", v: "110€ / séance" },
+              { s: "Séances de suivi (×3)", d: "1h30 chacune", v: "80€ / séance" },
             ].map((row, i) => (
               <div key={i} className="grid grid-cols-12 px-6 py-6 border-t border-[#E2DCD0] items-center">
-                <div className="col-span-5 md:col-span-5 font-serif text-xl text-forest">{row.s}</div>
+                <div className="col-span-6 md:col-span-6 font-serif text-xl text-forest">{row.s}</div>
                 <div className="col-span-3 md:col-span-3 text-sm text-[#4A5D54]">{row.d}</div>
-                <div className="col-span-2 md:col-span-2 text-right text-forest font-medium">{row.v}</div>
-                <div className="col-span-2 md:col-span-2 text-right text-forest font-medium">{row.h}</div>
+                <div className="col-span-3 md:col-span-3 text-right text-forest font-medium">{row.v}</div>
               </div>
             ))}
+            <div className="grid grid-cols-12 px-6 py-6 border-t border-[#E2DCD0] items-center bg-cream-2/60">
+              <div className="col-span-6 md:col-span-6 font-serif text-xl text-forest">Accompagnement complet</div>
+              <div className="col-span-3 md:col-span-3 text-sm text-[#4A5D54]">5 séances</div>
+              <div className="col-span-3 md:col-span-3 text-right text-terracotta font-medium">460€</div>
+            </div>
           </div>
-          <p className="text-xs text-[#4A5D54] mt-4 italic">Supplément déplacement domicile inclus dans le tarif.</p>
+          <p className="text-xs text-[#4A5D54] mt-4 italic">
+            Si besoin, des séances de suivi supplémentaires peuvent s'ajouter (1h30 · 80€).
+            Consultations en cabinet à Bouillante ou en visio partout en France.
+          </p>
         </div>
       </section>
 
