@@ -80,10 +80,10 @@ export default function Tarifs() {
           <h2 className="font-serif text-3xl text-forest mb-8">Notes importantes</h2>
           <ul className="space-y-3">
             {[
-              "Paiement en espèces ou par virement",
+              "Paiement par carte en ligne (Stripe), par virement ou en espèces au cabinet",
               "Certaines mutuelles remboursent partiellement — renseigne-toi auprès de la tienne",
               "Mon accompagnement est complémentaire au suivi médical, jamais en remplacement",
-              "Aucun abonnement obligatoire — paiement à la séance",
+              "Aucun forfait imposé — on règle séance par séance",
             ].map((n, i) => (
               <li key={i} className="flex gap-3 items-start bg-cream-2 rounded-2xl p-5">
                 <Check className="w-5 h-5 text-terracotta mt-0.5 flex-shrink-0" />
