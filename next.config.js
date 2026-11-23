@@ -31,10 +31,17 @@ const redirects = async () => [
 const __impeccableLiveDev =
   process.env.NODE_ENV === "development" ? " http://localhost:8400" : "";
 
-// Sources externes connues du site :
-// - Elfsight : widget Google Reviews (scripts + assets)
+// Sources externes connues du site (hôtes vérifiés dans le navigateur, pas devinés) :
+// - Google Analytics : www.googletagmanager.com (script gtag.js),
+//   *.google-analytics.com / *.analytics.google.com (envoi des mesures, endpoints régionaux)
+// - Elfsight (widget avis Google) : elfsightcdn.com (platform.js),
+//   universe-static.elfsightcdn.com (code du widget + fichiers de langue),
+//   static.elfsight.com (icônes SVG), service-reviews-ultimate.elfsight.com (données des avis),
+//   phosphor.utils.elfsightcdn.com (photos de profil des avis, proxy images Elfsight)
 // - next/font/google auto-héberge les polices → pas besoin de fonts.googleapis.com
-// - lh3.googleusercontent.com : avatars dans les avis Google (via remotePatterns)
+// - lh3.googleusercontent.com : avatars Google via next/image (remotePatterns)
+// Volontairement NON autorisé : stats.g.doubleclick.net (balise Google Signals /
+// remarketing publicitaire). Les statistiques de visite fonctionnent sans.
 // X-Frame-Options SAMEORIGIN sert de fallback pour les très vieux navigateurs
 // (les navigateurs modernes suivent le CSP frame-ancestors, qui reste à *
 //  pour permettre la prévisualisation dans l'iframe Emergent).
@@ -48,16 +55,16 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      // Next.js inline scripts + Elfsight (platform.js + widgets)
-      `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://elfsightcdn.com https://static.elfsight.com https://core.service.elfsight.com${__impeccableLiveDev}`,
+      // Next.js inline scripts + gtag.js + Elfsight (platform.js + code du widget)
+      `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://elfsightcdn.com https://universe-static.elfsightcdn.com https://static.elfsight.com https://core.service.elfsight.com${__impeccableLiveDev}`,
       // Tailwind inline styles + polices auto-hébergées
       "style-src 'self' 'unsafe-inline'",
       // Polices auto-hébergées via next/font
       "font-src 'self'",
-      // Images locales + avatars Google + data URIs
-      "img-src 'self' data: blob: https://lh3.googleusercontent.com https://elfsightcdn.com https://static.elfsight.com",
-      // API interne + appels Elfsight
-      `connect-src 'self' https://service.elfsight.com https://core.service.elfsight.com https://elfsightcdn.com${__impeccableLiveDev}`,
+      // Images locales + avatars des avis (proxy Elfsight) + avatars Google + data URIs
+      "img-src 'self' data: blob: https://lh3.googleusercontent.com https://phosphor.utils.elfsightcdn.com https://elfsightcdn.com https://static.elfsight.com",
+      // API interne + mesures Google Analytics + appels Elfsight (avis, langues, icônes)
+      `connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://service.elfsight.com https://core.service.elfsight.com https://service-reviews-ultimate.elfsight.com https://elfsightcdn.com https://universe-static.elfsightcdn.com https://static.elfsight.com${__impeccableLiveDev}`,
       // Iframes Elfsight widget si nécessaire
       "frame-src https://elfsightcdn.com https://static.elfsight.com",
       // Restreint l'iframe aux origines connues : domaine propre + previews Vercel
