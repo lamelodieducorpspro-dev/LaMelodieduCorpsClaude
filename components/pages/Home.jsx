@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Star, ArrowRight, Sparkles, Heart, Moon, Brain, Eye, Leaf, MapPin, Phone, Laptop } from "lucide-react";
-import { IMG, TESTIMONIALS, WHATSAPP_LINK, WHATSAPP_DISPLAY, ADDRESS, GOOGLE_REVIEWS, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEW_RATING } from "@/lib/constants";
+import { IMG, WHATSAPP_LINK, WHATSAPP_DISPLAY, ADDRESS, GOOGLE_REVIEWS, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEW_RATING } from "@/lib/constants";
 import ElfsightWidget from "@/components/site/ElfsightWidget";
 import HeroHeadline from "@/components/site/HeroHeadline";
 

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, GraduationCap, Sun, Moon, BookOpen, Star } from "lucide-react";
-import { IMG, TESTIMONIALS } from "@/lib/constants";
+import { ArrowRight, GraduationCap, Sun, Moon, BookOpen } from "lucide-react";
+import { IMG } from "@/lib/constants";
+import ElfsightWidget from "@/components/site/ElfsightWidget";
 
 export default function APropos() {
   return (
@@ -127,17 +128,8 @@ export default function APropos() {
       <section className="py-16 bg-cream-2">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <h2 className="font-serif text-3xl md:text-4xl text-forest mb-10 text-center">Ce qu'en disent celles qui m'ont fait confiance</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="bg-white rounded-[2rem] p-8 border border-[#E2DCD0]">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, k) => <Star key={k} className="w-4 h-4 fill-terracotta text-terracotta" />)}
-                </div>
-                <p className="font-serif text-lg text-forest italic mb-4 leading-relaxed">"{t.text}"</p>
-                <p className="text-sm text-[#4A5D54]">— {t.name} · {t.source}</p>
-              </div>
-            ))}
-          </div>
+          {/* Avis Google synchronises automatiquement (meme widget que l'accueil) */}
+          <ElfsightWidget appId="60304a0e-cd5c-4341-a1c7-6fb03b20eefb" className="w-full" />
         </div>
       </section>
 
